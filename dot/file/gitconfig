@@ -1,0 +1,22 @@
+[user]
+	name = k1574
+	email = k1574@yandex.ru
+[alias]
+	co = checkout
+	ci = commit
+	cl = clone
+	clr = clone --recursive
+	st = status
+	ad = add
+	br = branch
+	df = diff
+	sm = submodule
+	rt = remote
+	rs = reset
+	sh = stash
+	ps = push
+	pl = pull
+	fc = fetch
+	lg = log
+	type = cat-file -t
+	dump = cat-file -p

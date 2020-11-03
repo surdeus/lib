@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if test -r "$LOGIN.sh" ; then
+	. "$LOGIN.sh"
+fi
+
+
+PS1="$SHPROMPT"
+
+if test -r "$SETENV.sh" ; then
+	. "$SETENV.sh"
+	setenv sh
+fi

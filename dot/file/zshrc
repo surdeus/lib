@@ -1,0 +1,34 @@
+#!/bin/sh
+autoload -Uz compinit promptinit
+compinit
+promptinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:manuals.*' insert-sections true
+zstyle ':completion:*:man:*' menu yes select
+setopt correct
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+HISTFILE="$HOME/.zhistory"
+HISTSIZE=10000
+SAVEHIST="$HISTSIZE"
+setopt menu_complete
+setopt append_history
+setopt extended_history
+setopt inc_append_history
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt no_hist_beep
+setopt auto_cd
+setopt nonomatch
+setopt notify
+setopt hash_list_all
+setopt nohup
+setopt nobeep
+setopt noglobdots
+setopt noshwordsplit
+test -r "$LOGIN" && . "$LOGIN"
+PROMPT="$SHPROMPT"
+test -r "$SETENV" && . "$SETENV" && setenv zsh
+

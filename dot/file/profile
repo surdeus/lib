@@ -1,0 +1,62 @@
+#!/bin/sh
+# k1574's profile.
+
+export_loop(){
+	# Chore, because I'm lazy to type "export" so many times.
+	# Standard "export" command takes arguments
+	#	from variables from the start, but I want to
+	#	use other variables in definition for next of them.
+	while [  ! -z "$1" ]  ; do
+		# Doing until we have arguments.
+		value="$(eval echo $2)"
+		name="$1"
+		export "$name"="$value"
+		shift 2
+	done
+}
+
+# Standard variables.
+export_loop  \
+	ENV '$HOME/.shrc' \
+	SHPROMPT '"% "' \
+	PS1 '"$SHPROMPT"' \
+	SUDO_PROMPT '"#"' \
+	EDITOR 'ed' \
+	VISUAL 'vi' \
+	GIT_EDITOR '$VISUAL' \
+	PAGER 'less' \
+	MANPAGER '$PAGER' \
+	PROFILE '$HOME/.profile' \
+	TXT '$HOME/txt' \
+	TMPL '$HOME/tmpl' \
+	APP '$HOME/APP' \
+	ENVDIR '$LOCAL/env' \
+	GIT '$LOCAL/git' \
+	ETC '$LOCAL/etc' \
+	SETENV '$ETC/env/setenv' \
+	TMP '$LOCAL/tmp' \
+	SHR '$LOCAL/shr' \
+	MNT '$HOME/mnt' \
+	EXE '$EXE/bin' \
+	GOPATH '$APP/go' \
+	GOEXE '$GOPATH/bin'\
+	VPATH '$DEV/v'\
+	VEXE '$VPATH'\
+	PLAN9BASE '/usr/local/plan9' \
+	PLAN9PORT '$APP/plan9' \
+	PLAN9 '$PLAN9PORT' \
+	INFERNO '$APP/inferno' \
+	LIB '$HOME/lib' \
+	IMG '$HOME/img' \
+	SND '$HOME/snd' \
+	DOC '$HOME/doc' \
+	VID '$HOME/vid' \
+	LOAD '$HOME/load' \
+	XDG_CONFIG_HOME '$LIB' \
+	XDG_RUNTIME_DIR '$TMP' \
+	XDG_DATA_HOME '$APP' \
+	LOGIN '$LIB/login/sh' \
+	PATH '$EXE:$PATH:$GOEXE:$PLAN9BASE/bin:$PLAN9PORT/bin:$VEXE' \
+
+test -r $SETENV && . "$SETENV.sh" && setenv profile
+

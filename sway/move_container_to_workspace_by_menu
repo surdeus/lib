@@ -1,0 +1,5 @@
+#!/bin/sh
+
+swaymsg mode "empty"
+swaymsg move container to workspace "`echo | $1`"
+swaymsg mode "tag"

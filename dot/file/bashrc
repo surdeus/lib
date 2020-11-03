@@ -1,0 +1,4 @@
+test -r "$LOGIN" && . "$LOGIN"
+test -r "$SETENV" && . "$SETENV" && setenv bash
+export PS1="$SHPROMPT"
+

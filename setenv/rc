@@ -1,0 +1,18 @@
+# Setting environment for rc-like shells.
+
+# This part lets me to set variables by files and add functionality.
+
+fn setenv {
+	rc=$1
+	mkdir -p $dirs
+	# Variables.
+	for(file in $env/$rc/var/* ){
+		test -r $file && `{basename $file} = `{cat $file}
+	}
+	# Additional scripts to run on startup.
+	for(file in $env/$rc/rc/*){
+		test -r $file && . $file
+	}
+	dirs=''
+	rc=''
+}

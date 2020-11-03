@@ -1,0 +1,69 @@
+*utf8Title : true
+*utf8 : 2
+*locale : true
+*faceName : Consolas
+*.font: Consolas:pixelsize=12:antialias=true:autohint=true
+*.boldFont : Consolas:pixelsize=12:antialias=true:autohint=true:weight=bold
+*.italicFont : Consolas:pixelsize=12:antialias=true:autohint=true:slant=italic
+*faceSize : 10
+*fontSize : 10
+*.alternateScroll: false
+*.vt100.geometry: 80x30
+*eightBitInput: true
+*metaSendsEscape: true
+xterm*boldMode: true
+*dynamicColors: on
+*colorMode: on
+*saveLines: 10000
+*visualBell: false
+*.bellIsUrgent: false
+*cursorBlink: false
+*.metaSendsEscape: true
+
+*background : rgb:00/00/00
+*foreground : rgb:FF/FF/FF
+*cursorColor : rgb:FF/FF/FF
+! Black.
+*color0 : rgb:00/00/00
+*color8 : rgb:66/66/66
+! Red.
+*color1 : rgb:DD/22/22
+*color9 : rgb:FF/00/00
+
+! Green.
+*color2 : rgb:67/E3/00
+*color10 : rgb:A9/F1/6C
+! Yellow.
+*color3 : rgb:F7/FF/00
+*color11 : rgb:EB/F2/2C
+! Blue.
+*color4 : rgb:51/90/D0
+*color12 : rgb:34/6A/A1
+! Madgenta.
+*color5 : rgb:FF/6E/00
+*color13 : rgb:DE/60/00
+! Cyan.
+*color6 : rgb:00/FF/FF
+*color14 : rgb:17/FF/FF
+! White.
+*color7 : rgb:DD/DD/DD
+*color15 : rgb:FF/FF/FF
+
+
+! }}} # xterm, urxvt and other terminals that use Xresources.
+
+! prog yeahconsole {{{
+yeahconsole*term : st
+yeahconsole*transparent : false 
+!yeahconsole*shading : 70
+yeahconsole*consoleHeight : 25
+!yeahconsole*screenWidth : default(display width)
+!yeahconsole*xOffset : defalt(0)
+yeahconsole*toggleKey : None+F12
+yeahconsole*restart : 1
+yeahconsole*keyFull : None+F11
+yeahconsole*keySmaller : None+F10
+yeahconsole*keyBigger: None+F9
+yeahconsole*aniDelay : 5
+yeahconsole*externalBorder : 1
+! }}} # yeahconsole

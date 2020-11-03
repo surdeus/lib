@@ -1,0 +1,79 @@
+" k1574's shitty vimrc.
+" Mouse.
+	" In many terminal emulators the mouse works just fine.
+	" By enabling it you can position the cursor,
+	" Visually select and scroll with the mouse.
+	if( has('mouse') )
+		set mouse=a
+	endif
+" Set.
+	set nowrap
+	set number
+	set autoindent
+	set smartindent
+	" Fuck the spaces.
+	" Especially in the Python...
+	" 'ftplugin'(For neovim)
+	let g:python_recommended_style=0
+	imap <S-Tab> <Space><Space><Space><Space>
+	set smarttab
+	set noet ci pi sw=4 ts=4
+	set showcmd
+	set showmatch
+	set ignorecase
+	set autowrite
+	set hlsearch
+	" List.
+	set list
+	set listchars=tab:\|\.,trail:.
+	match NonText /\t/
+	" Folding.
+	set foldenable
+	set foldmethod=indent
+	set foldnestmax=10
+" GUI.
+	" Cursor line in GUI(It works too slow in terminal).
+	if has("gui_running")
+		set cursorline
+		colorscheme vividchalk
+	else
+		" My colorscheme based on 'slate'.
+	 	 colorscheme jien
+		"colorscheme torte
+	endif
+" Syntax.
+	syntax on
+" Maps.
+	" Nerd-Tree.
+	nmap \nt :NERDTree . <enter>
+	" Disable highlight.
+	nmap \nl :if &cursorline==1<enter>set nocursorline<enter>else<enter>set cursorline<enter>endif<enter><enter>
+	nmap \nh :nohlsearch<enter>
+	nmap <Return> i<Return><Esc>
+	nmap <Tab> >>
+	nmap <S-Tab> <<
+	nmap <Space> i<Space><Esc>
+	nmap <Backspace> i<Backspace><Esc>l
+	nmap <C-l> <C-w>l
+	nmap <C-h> <C-w>h
+	nmap <C-j> <C-w>j
+	nmap <C-k> <C-w>k
+	imap <M-a> <Esc>
+	imap <C-Space> <Esc>
+	nmap + <C-W>+
+	nmap - <C-W>-
+	cnoremap <C-A> <Home>
+	cnoremap <C-F> <Right>
+	cnoremap <C-B> <Left>
+	cnoremap <Esc>b <S-Left>
+	cnoremap <Esc>f <S-Right>
+" Autocmd.
+	" When editing a file, always jump to the last known cursor position.
+	" Don't do it when the position is invalid or when inside an event handler
+	" (happens when dropping a file on "gvim").
+	autocmd BufReadPost *
+	\	if line("'\"") > 0 && line("'\"") <= line("$") |
+	\		exe "normal g`\"" |
+	\	endif
+" Encoding.
+	set encoding=utf-8

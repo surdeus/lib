@@ -1,0 +1,4 @@
+OPTIONS=boulder:0,color
+OPTIONS=!cmdassist
+OPTIONS=!rest_on_space
+OPTIONS=!autopickup,!autodig

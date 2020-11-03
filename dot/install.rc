@@ -1,0 +1,10 @@
+#!/bin/env rc
+rpath = `{dirname `{readlink -f $0}}
+dot = $rpath/file
+for(i in $dot/*){
+	ln = $home/.`{basename $i}
+	rm -f $ln
+	echo $ln $i
+	ln -s $i $ln
+}
+

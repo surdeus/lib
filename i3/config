@@ -1,0 +1,368 @@
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+set $kbd_options grp:alt_space_toggle
+set $resize_speed 25px
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Menu.
+set $menucmd xmenu
+set $rmenucmd i3-dmenu-desktop
+set $runcmd   $rmenucmd
+#for_window [app_id="launcher"] floating enable, resize set width 1000 px height 250 px
+# Bar.
+set $barcmd i3status
+# Terminal.
+set $termcmd st
+
+# Home row direction keys, like vim.
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+# Default.
+set $fg_c      "#ffffff"
+set $bg_c      "#000000"
+set $tb_c      "#ffffff"
+set $wb_c      $tb_c
+set $i_c       "#00ffff"
+# Inactive.
+set $ifg_c     $fg_c
+set $ibg_c     "#881111"
+set $itb_c     "#660000"
+set $iwb_c     "$itb_c"
+set $ii_c      $i_c
+# Focused.
+set $ffg_c     $fg_c
+set $fbg_c     "#CC2222"
+set $ftb_c     "#FF0000"
+set $fwb_c     $ftb_c
+set $fi_c      $i_c
+# Unfocused.
+set $ufg_c     "#bbbbbb"
+set $ubg_c     "#484848"
+set $utb_c     "#303030"
+set $uwb_c     $utb_c
+set $ui_c      $i_c
+
+# Indicator color.
+
+
+
+# Class             TBorder    Background    Text     Indicator    WBorder
+client.focused          $ftb_c     $fbg_c        $ffg_c   $fi_c         $fwb_c
+client.focused_inactive $itb_c     $ibg_c        $ifg_c   $ii_c         $iwb_c
+client.unfocused        $utb_c     $ubg_c        $ufg_c   $ui_c         $uwb_c
+
+font  pango:Consolas Mono 10
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
+#output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg #000000 solid_color
+
+bar {
+    position bottom
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command "$barcmd"
+    font pango:Consolas Mono 10
+
+    colors {
+        statusline #ffffff
+        background $bg_c
+        inactive_workspace  $itb_c  $ibg_c $ifg_c
+        active_workspace    $ftb_c  $fbg_c $ffg_c
+        focused_workspace   #cc2222 #990000 #ffffff
+    }
+}
+#
+### Key bindings
+floating_modifier $mod
+#mode "default" {
+    # Defaults.
+    #
+    # Start mode for any other mode.
+    # Other modes:
+
+    bindsym $mod+w mode "window"
+    bindsym $mod+t mode "tag"
+    bindsym $mod+e mode "execute"
+
+    # Start a terminal.
+    bindsym $mod+Shift+Return exec   " $termcmd "
+    # Start launcher.
+    bindsym $mod+Shift+p exec " $rmenucmd "
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+
+    # Reload the configuration file.
+    bindsym $mod+Ctrl+Shift+r reload
+
+    # Exit sway (logs you out of your Wayland session).
+    bindsym $mod+Ctrl+Shift+q exec swaymsg exit
+
+    # Lock the screen.
+    bindsym $mod+Ctrl+Shift+l exec swaylock
+
+    # Move focus to the parent container
+    bindsym $mod+p focus     parent
+    # Move focus to the child.
+    bindsym $mod+c focus     child
+    # Kill focused window.
+    bindsym $mod+x           kill
+
+    # The most usable workspace bindings.
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace 2
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
+    bindsym $mod+6 workspace 6
+    bindsym $mod+7 workspace 7
+    bindsym $mod+8 workspace 8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+0 workspace 0
+
+    bindsym $mod+Shift+1     move container to workspace 1
+    bindsym $mod+Shift+2     move container to workspace 2
+    bindsym $mod+Shift+3     move container to workspace 3
+    bindsym $mod+Shift+4     move container to workspace 4
+    bindsym $mod+Shift+5     move container to workspace 5
+    bindsym $mod+Shift+6     move container to workspace 6
+    bindsym $mod+Shift+7     move container to workspace 7
+    bindsym $mod+Shift+8     move container to workspace 8
+    bindsym $mod+Shift+9     move container to workspace 9
+    bindsym $mod+Shift+0     move container to workspace 0
+
+    bindsym $mod+comma       focus left
+    bindsym $mod+$left       focus left
+    bindsym $mod+$down       focus down
+    bindsym $mod+$up         focus up
+    bindsym $mod+$right      focus right
+    bindsym $mod+period      focus right
+
+    bindsym $mod+Ctrl+$left  resize shrink width   $resize_speed
+    bindsym $mod+Ctrl+$down  resize grow   height  $resize_speed
+    bindsym $mod+Ctrl+$up    resize shrink height  $resize_speed
+    bindsym $mod+Ctrl+$right resize grow   width   $resize_speed
+
+    bindsym $mod+Shift+$left  move left
+    bindsym $mod+Shift+$down  move down
+    bindsym $mod+Shift+$up    move up
+    bindsym $mod+Shift+$right move right
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+space       floating toggle
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+shift+space focus mode_toggle
+    # Toggle dvorak.
+    bindsym $mod+Tab          exec "setxkbmap -layout 'us,ru' -variant 'dvorak,'  -option $kbd_options ; xmodmap $HOME/.Xmodmap"
+    bindsym $mod+Return       exec "setxkbmap -layout 'us,ru' -variant 'dvp,'     -option $kbd_options ; xmodmap $HOME/.Xmodmap"
+    bindsym $mod+a            exec "setxkbmap -layout 'us,ru' -variant ','        -option $kbd_options ; xmodmap $HOME/.Xmodmap"
+    bindsym $mod+BackSpace    exec "setxkbmap -layout 'ru,us' -variant ,dvorak    -option $kbd_options ; xmodmap $HOME/.Xmodmap"
+    bindsym $mod+Shift+b     splith
+    bindsym $mod+Shift+v     splitv
+    bindsym $mod+minus move scratchpad
+    bindsym $mod+Shift+minus scratchpad show
+    bindsym $mod+Shift+s     layout stacking
+    bindsym $mod+Shift+t     layout tabbed
+    bindsym $mod+Shift+g     layout toggle split
+    bindsym $mod+Shift+f     fullscreen
+#}
+
+mode "window" {
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym b splith
+    bindsym v splitv
+    #
+    # Scratchpad:
+    #
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym  minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym Shift+minus scratchpad show
+
+    # Switch the current container between different layout styles
+    bindsym s layout stacking
+    bindsym t layout tabbed
+    bindsym g layout toggle split
+
+    # Make the current focus fullscreen.
+    bindsym f fullscreen
+
+
+    # Resize.
+    bindsym Ctrl+$left  resize shrink width   $resize_speed
+    bindsym Ctrl+$down  resize grow   height  $resize_speed
+    bindsym Ctrl+$up    resize shrink height  $resize_speed
+    bindsym Ctrl+$right resize grow   width   $resize_speed
+
+    # Move.
+    bindsym Shift+$left  move left
+    bindsym Shift+$down  move down
+    bindsym Shift+$up    move up
+    bindsym Shift+$right move right
+
+    # Kill focused window.
+    bindsym x     kill
+
+    # Standard.
+
+    # Move focus to the parent container
+    bindsym p focus parent
+    # Move focus to the child.
+    bindsym c focus child
+    bindsym space floating toggle
+    bindsym shift+space focus mode_toggle
+    bindsym $left  focus left
+    bindsym $down  focus down
+    bindsym $up    focus up
+    bindsym $right focus right
+    #bindsym Space  mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "tag" {
+    # Switch to workspace.
+    bindsym 1 workspace 1
+    bindsym 2 workspace 2
+    bindsym 3 workspace 3
+    bindsym 4 workspace 4
+    bindsym 5 workspace 5
+    bindsym 6 workspace 6
+    bindsym 7 workspace 7
+    bindsym 8 workspace 8
+    bindsym 9 workspace 9
+    bindsym 0 workspace 0
+    bindsym q workspace q
+    bindsym w workspace w
+    bindsym e workspace e
+    bindsym r workspace r
+    bindsym t workspace t
+    bindsym y workspace y
+    bindsym minus workspace '-'
+    bindsym u workspace u
+    bindsym i workspace i
+    bindsym o workspace o
+    bindsym a workspace a
+    bindsym s workspace s
+    bindsym d workspace d
+    bindsym f workspace f
+    bindsym g workspace g
+    # Move focused container to workspace.
+    bindsym Shift+1     move container to workspace 1
+    bindsym Shift+2     move container to workspace 2
+    bindsym Shift+3     move container to workspace 3
+    bindsym Shift+4     move container to workspace 4
+    bindsym Shift+5     move container to workspace 5
+    bindsym Shift+6     move container to workspace 6
+    bindsym Shift+7     move container to workspace 7
+    bindsym Shift+8     move container to workspace 8
+    bindsym Shift+9     move container to workspace 9
+    bindsym Shift+0     move container to workspace 0
+    bindsym Shift+q     move container to workspace q
+    bindsym Shift+w     move container to workspace w
+    bindsym Shift+e     move container to workspace e
+    bindsym Shift+r     move container to workspace r
+    bindsym Shift+t     move container to workspace t
+    bindsym Shift+y     move container to workspace y
+    bindsym Shift+minus move container to workspace '-'
+    bindsym Shift+u     move container to workspace u
+    bindsym Shift+i     move container to workspace i
+    bindsym Shift+o     move container to workspace o
+    bindsym Shift+p     move container to workspace p
+    bindsym Shift+a     move container to workspace a
+    bindsym Shift+s     move container to workspace s
+    bindsym Shift+d     move container to workspace d
+    bindsym Shift+f     move container to workspace f
+    bindsym Shift+g     move container to workspace g
+
+    # Any workspace name.
+    bindsym Return       exec $XDG_CONFIG_HOME/sway/workspace_by_menu                   $menucmd
+    bindsym Shift+Return exec $XDG_CONFIG_HOME/sway/move_container_to_workspace_by_menu $menucmd
+    #
+    # Default.
+
+    # Move focus to the parent container
+    bindsym $mod+p focus parent
+    # Move focus to the child.
+    bindsym $mod+c focus child
+    bindsym $mod+space floating toggle
+    bindsym $mod+shift+space focus mode_toggle
+    bindsym $mod+$left  focus left
+    bindsym $mod+$down  focus down
+    bindsym $mod+$up    focus up
+    bindsym $mod+$right focus right
+    bindsym Space  mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "execute" {
+    bindsym f       exec 'firefox'
+    bindsym Shift+f exec 'falkon'
+    bindsym w       exec 'waterfox'
+    bindsym Ctrl+w  exec 'wicd-gtk'
+    bindsym Ctrl+Shift+w exec $termcmd' -e wicd-curses'
+    bindsym c       exec 'chromium'
+    bindsym Ctrl+c  exec 'cadence'
+    bindsym Ctrl+p  exec 'pavucontrol'
+    bindsym Shift+c exec 'carla'
+    bindsym o       exec 'opera'
+    bindsym g       exec 'gimp'
+    bindsym i       exec 'inkscape'
+    bindsym t       exec  $termcmd
+    bindsym Shift+t exec "cool-retro-term"
+    bindsym n       exec 'non-session-manager'
+    bindsym a       exec "audacity"
+    bindsym Shift+a exec 'ardour5'
+    bindsym $mod+a  exec 'amsynth'
+    bindsym Shift+l exec 'lmms'
+    bindsym l       exec $termcmd' -e lf'
+    bindsym x       exec 'xfe'
+    bindsym Ctrl+h  exec $termcmd' -e htop'
+    bindsym Ctrl+t  exec $termcmd' -e top'
+    bindsym Ctrl+s  exec $termcmd' -e alsamixer'
+
+    # Default.
+    #
+    # Move focus to the parent container
+    bindsym $mod+p focus parent
+    # Move focus to the child.
+    bindsym $mod+c focus child
+    bindsym $mod+space floating toggle
+    bindsym $mod+$left  focus left
+    bindsym $mod+$down  focus down
+    bindsym $mod+$up    focus up
+    bindsym $mod+$right focus right
+    bindsym Space  mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "empty" {
+    bindsym $mod+Space mode "default"
+    bindsym $mod+a     exec $XDG_CONFIG_HOME/sway/toggle_dvorak
+}
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+
+
+#include @sysconfdir@/sway/config.d/*
