@@ -18,6 +18,13 @@ export_loop(){
 # Standard variables.
 export_loop  \
 	ENV '$HOME/.shrc' \
+	LIB '$HOME/lib' \
+	IMG '$HOME/img' \
+	SND '$HOME/snd' \
+	DOC '$HOME/doc' \
+	VID '$HOME/vid' \
+	LOAD '$HOME/load' \
+	TXT '$HOME/txt' \
 	SHPROMPT '"% "' \
 	PS1 '"$SHPROMPT"' \
 	SUDO_PROMPT '"#"' \
@@ -27,15 +34,12 @@ export_loop  \
 	PAGER 'less' \
 	MANPAGER '$PAGER' \
 	PROFILE '$HOME/.profile' \
-	TXT '$HOME/txt' \
 	TMPL '$HOME/tmpl' \
-	APP '$HOME/APP' \
-	ENVDIR '$LOCAL/env' \
-	GIT '$LOCAL/git' \
-	ETC '$LOCAL/etc' \
-	SETENV '$ETC/env/setenv' \
-	TMP '$LOCAL/tmp' \
-	SHR '$LOCAL/shr' \
+	APP '$HOME/app' \
+	ENVDIR '$HOME/env' \
+	SETENV '$LIB/setenv/sh' \
+	TMP '$HOME/tmp' \
+	SHR '$HOME/shr' \
 	MNT '$HOME/mnt' \
 	EXE '$EXE/bin' \
 	GOPATH '$APP/go' \
@@ -46,17 +50,11 @@ export_loop  \
 	PLAN9PORT '$APP/plan9' \
 	PLAN9 '$PLAN9PORT' \
 	INFERNO '$APP/inferno' \
-	LIB '$HOME/lib' \
-	IMG '$HOME/img' \
-	SND '$HOME/snd' \
-	DOC '$HOME/doc' \
-	VID '$HOME/vid' \
-	LOAD '$HOME/load' \
 	XDG_CONFIG_HOME '$LIB' \
 	XDG_RUNTIME_DIR '$TMP' \
 	XDG_DATA_HOME '$APP' \
 	LOGIN '$LIB/login/sh' \
 	PATH '$EXE:$PATH:$GOEXE:$PLAN9BASE/bin:$PLAN9PORT/bin:$VEXE' \
 
-test -r $SETENV && . "$SETENV.sh" && setenv profile
+test -r $SETENV && . "$SETENV" && setenv profile
 

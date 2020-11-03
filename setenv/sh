@@ -13,14 +13,14 @@ if [ -d "$ENVDIR" ] ; then
 	# Set variables from files.
 	sh="$1"
 	
-	for i in  "$ENVDIR/$sh/var"/* ; do
+	for i in "$ENVDIR/$sh/var"/* ; do
 		if test -r "$i"  ; then
 			export "`basename \"$i\"`"="`cat \"$i\"`"
 		fi
 	done
 
 	# Modules.
-	for i in "$ENVDIR/$sh"/*.sh ; do
+	for i in "$ENVDIR/$sh/rc"/*; do
 		if test -r "$i"  ; then
 			. "$i"
 		fi

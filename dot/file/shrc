@@ -1,13 +1,5 @@
 #!/bin/sh
-
-if test -r "$LOGIN.sh" ; then
-	. "$LOGIN.sh"
-fi
-
-
+test -r "$LOGIN" && . "$LOGIN"
 PS1="$SHPROMPT"
+test -r "$SETENV" && . "$SETENV" && setenv sh
 
-if test -r "$SETENV.sh" ; then
-	. "$SETENV.sh"
-	setenv sh
-fi

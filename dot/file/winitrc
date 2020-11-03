@@ -1,9 +1,0 @@
-session=$(1:-sway)
-shift
-arg="$@"
-# The same as xinitrc, but for Wayland programs.
-case "$session" in
-	sway         ) exec sway $arg;;
-	# Not found any specific.
-	*            ) exec $session $arg ;;
-esac
