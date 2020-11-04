@@ -4,7 +4,7 @@
 
 fn setenv {
 	rc=$1
-	mkdir -p $dirs
+	mkdir -p $env
 	# Variables.
 	for(file in $env/$rc/var/* ){
 		test -r $file && `{basename $file} = `{cat $file}

@@ -1,4 +1,4 @@
-# jien's rc configuration file.
+# k1574's rc configuration file.
 
 prompt = '% ' # The simplest possible prompt.
 fn % {
@@ -21,7 +21,7 @@ app = $home/app # Program installation directory.
 env = $home/env # Environment setting directory.
 dev = $home/dev # Development.
 #etc = $local/etc # Configuration files for any system.
-exe = $home/bin # Executable binaries installation directory.
+exe = $home/exe # Executable binaries installation directory.
 tmp = $home/tmp # Temporary.
 shr = $home/shr # Share files for programs.
 man = $shr/man # Directory for manual pages. Are supposed to be written in plain text.
@@ -138,3 +138,4 @@ if(test -r $setenv){
 	. $setenv
 	setenv rc
 }
+

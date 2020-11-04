@@ -18,6 +18,7 @@ export_loop(){
 # Standard variables.
 export_loop  \
 	ENV '$HOME/.shrc' \
+	DEV '$HOME/dev' \
 	LIB '$HOME/lib' \
 	IMG '$HOME/img' \
 	SND '$HOME/snd' \
@@ -25,6 +26,10 @@ export_loop  \
 	VID '$HOME/vid' \
 	LOAD '$HOME/load' \
 	TXT '$HOME/txt' \
+	SHR '$HOME/shr' \
+	MNT '$HOME/mnt' \
+	TMP '$HOME/tmp' \
+	EXE '$HOME/exe' \
 	SHPROMPT '"% "' \
 	PS1 '"$SHPROMPT"' \
 	SUDO_PROMPT '"#"' \
@@ -33,15 +38,12 @@ export_loop  \
 	GIT_EDITOR '$VISUAL' \
 	PAGER 'less' \
 	MANPAGER '$PAGER' \
+	MAN '$SHR/man' \
 	PROFILE '$HOME/.profile' \
 	TMPL '$HOME/tmpl' \
 	APP '$HOME/app' \
 	ENVDIR '$HOME/env' \
 	SETENV '$LIB/setenv/sh' \
-	TMP '$HOME/tmp' \
-	SHR '$HOME/shr' \
-	MNT '$HOME/mnt' \
-	EXE '$EXE/bin' \
 	GOPATH '$APP/go' \
 	GOEXE '$GOPATH/bin'\
 	VPATH '$DEV/v'\
