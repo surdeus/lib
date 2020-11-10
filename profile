@@ -14,6 +14,7 @@ doc = $home/doc # Documents.
 lib = $home/lib # Configuration for other applications.
 txt = $home/txt # Plain text files. Lists, notes etc.
 load = $home/load # Downloads.
+mnt = $home/mnt # Mount.
 vid = $home/vid # Video files.
 snd = $home/audio # Audio files.
 img = $home/img # Image files.
