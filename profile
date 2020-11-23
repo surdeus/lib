@@ -134,6 +134,10 @@ fn p {
 	plumb $*
 }
 
+fn e {
+	$editor $*
+}
+
 # Setting enviroment.
 if(test -r $setenv){
 	. $setenv
