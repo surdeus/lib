@@ -28,6 +28,7 @@ export_loop  \
 	TXT '$HOME/txt' \
 	SHR '$HOME/shr' \
 	MNT '$HOME/mnt' \
+	PUB '$HOME/pub' \
 	TMP '$HOME/tmp' \
 	EXE '$HOME/exe' \
 	SHPROMPT '"% "' \

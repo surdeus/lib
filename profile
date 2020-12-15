@@ -15,6 +15,7 @@ lib = $home/lib # Configuration for other applications.
 txt = $home/txt # Plain text files. Lists, notes etc.
 load = $home/load # Downloads.
 mnt = $home/mnt # Mount.
+pub = $home/pub # Public share.
 vid = $home/vid # Video files.
 snd = $home/snd # Audio files.
 img = $home/img # Image files.
