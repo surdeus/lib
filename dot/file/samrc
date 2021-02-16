@@ -66,7 +66,7 @@ font Consolas:size=12
 # Use black for text and borders, and an angry fruit salad for backgrounds.
 foreground black
 border black
-background white
+background white:seashell:lightgreen:oldlace:lightcyan:gainsboro:lightyellow:mintcream:snow:lightblue:thistle
 
 # Expand tabs and have tabstops every four columns
 tabs 4

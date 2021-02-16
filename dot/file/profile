@@ -57,6 +57,7 @@ export_loop  \
 	XDG_RUNTIME_DIR '$TMP' \
 	XDG_DATA_HOME '$APP' \
 	LOGIN '$LIB/login/sh' \
+	GIT 'https://github.com/$USER' \
 	PATH '$EXE:$PATH:$GOEXE:$PLAN9BASE/bin:$PLAN9PORT/bin:$VEXE' \
 
 test -r $SETENV && . "$SETENV" && setenv profile

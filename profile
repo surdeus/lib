@@ -27,6 +27,7 @@ exe = $home/exe # Executable binaries installation directory.
 tmp = $home/tmp # Temporary.
 shr = $home/shr # Share files for programs.
 man = $shr/man # Directory for manual pages. Are supposed to be written in plain text.
+git = https://github.com/$USER
 pager = nobs # Pager deleting all ESC-sequences. For 9term mostly.
 manpager = $pager # Pager for man pages.
 profile = $0 # Profile file.
@@ -137,6 +138,10 @@ fn p {
 
 fn e {
 	$editor $*
+}
+
+fn q {
+	exit
 }
 
 # Setting enviroment.
