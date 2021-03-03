@@ -10,9 +10,9 @@ bind C l command charright
 bind C j command linedown
 bind C k command lineup
 
-# Scrolling as in "less".
-bind C f command scrolldown
-bind C b command scrollup
+# Scrolling as in "less" but with Shift.
+bind CS f command scrolldown
+bind CS b command scrollup
 
 # Control-Space highlights recent text
 bind C space command escape
@@ -57,11 +57,11 @@ bind C s command write
 bind CS s command send X w
 
 # Control-N does a search, Control-Shift-N does a look
-bind C n command search
+#bind C n command search
 bind CS n command look
 
 # Font.
-font Consolas:size=12
+font DeJavu Sans Mono:size=12:antialias=true:autohint=true
 
 # Use black for text and borders, and an angry fruit salad for backgrounds.
 foreground black
