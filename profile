@@ -68,7 +68,7 @@ xmodmap = $lib/xmodmap
 
 switch( `{uname} ){
 case ( Linux NetBSD DragonFly OpenBSD FreeBSD ) # On Unix-like systems.
-	if(which aes){
+	if(which aes > /dev/null){
 		LESS_TERMCAP_md = `{aes fg-red bold }
 		LESS_TERMCAP_me = `{aes end}
 		LESS_TERMCAP_us = `{aes fg-green bold}
@@ -122,13 +122,15 @@ fn ll {
 cds = (`{pwd})
 fn cd {
 	# History implementation.
- 	if(builtin cd $1 && test -n $1)
-		cds = (`{pwd} $cds)
+ 	if(builtin cd $1 && test -n $1){
+		pwd = `{pwd}
+		cds = ($pwd $cds)
+	}
 }
 
 fn - {
 	# Move back in history for $1 notes.
-	if(test -z $1)
+	if(~ $#* 0)
 		1 = 1
 	builtin cd $cds($1)
 }
