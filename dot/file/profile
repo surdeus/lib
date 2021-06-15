@@ -47,7 +47,7 @@ export_loop  \
 	SETENV '$LIB/setenv/sh' \
 	GOPATH '$APP/go' \
 	GOEXE '$GOPATH/bin'\
-	VPATH '$DEV/v'\
+	VPATH '$APP/v'\
 	VEXE '$VPATH'\
 	PLAN9BASE '/usr/local/plan9' \
 	PLAN9PORT '$APP/plan9' \

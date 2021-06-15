@@ -46,14 +46,14 @@ plan9 = $app/plan9 # Plan9.
 plan9exe= $plan9/bin # Plan9 bnaries.
 gopath = $app/go # Golang path.
 goexe = $gopath/bin # Golang binaries.
-vpath = $dev/v # VLang binaries and scripts.
+vpath = $app/v # VLang binaries and scripts.
 vexe = $vpath
 setenv = $lib/setenv/rc # Setting environment script.
 font = $plan9/font/fixed/unicode.9x15.font # The standard font for Plan9 program.
 editor = ed
 shell = rc
 
-path = ( $exe $path $goexe $plan9exe $infernoexe $vexe)
+path = ( $exe $path $goexe $plan9exe $infernoexe $vexe )
 # Pretend path from growing because of running many "rc"s.
 if(which goblin >/dev/null >[2=1]){
 	path = `{
@@ -68,18 +68,29 @@ xmodmap = $lib/xmodmap
 
 switch( `{uname} ){
 case ( Linux NetBSD DragonFly OpenBSD FreeBSD ) # On Unix-like systems.
-	# Default color.
-	LESS_TERMCAP_md = `{ perl -e 'print "\033[1;31m" ;' }
-	LESS_TERMCAP_me = `{ perl -e 'print "\033[0m"    ;' }
-	# Underlined.
-	LESS_TERMCAP_us = `{ perl -e 'print "\033[1;32m" ;' }
-	LESS_TERMCAP_ue = `{ perl -e 'print "\033[0m"    ;' }
-	# Service info.
-	LESS_TERMCAP_so = `{ perl -e 'print "\033[1;33m ";' }
-	LESS_TERMCAP_se = `{ perl -e 'print "\033[0m"    ;' }
-	# Blinking color.
-	LESS_TERMCAP_mb = `{ perl -e 'print "\033[1;32m" ;' }
-	LESS_TERMCAP_me = `{ perl -e 'print "\033[0m"    ;' }
+	if(which aes){
+		LESS_TERMCAP_md = `{aes fg-red bold }
+		LESS_TERMCAP_me = `{aes end}
+		LESS_TERMCAP_us = `{aes fg-green bold}
+		LESS_TERMCAP_ue = `{aes end}
+		LESS_TERMCAP_so = `{aes fg-yellow}
+		LESS_TERMCAP_se = `{aes end}
+		LESS_TERMCAP_mb = `{aes fg-cyan}
+		LESS_TERMCAP_me = `{aes end} 
+	}
+	if not {
+		LESS_TERMCAP_md = `{ perl -e 'print "\033[1;31m" ;' }
+		LESS_TERMCAP_me = `{ perl -e 'print "\033[0m"    ;' }
+		# Underlined.
+		LESS_TERMCAP_us = `{ perl -e 'print "\033[1;32m" ;' }
+		LESS_TERMCAP_ue = `{ perl -e 'print "\033[0m"    ;' }
+		# Service info.
+		LESS_TERMCAP_so = `{ perl -e 'print "\033[1;33m ";' }
+		LESS_TERMCAP_se = `{ perl -e 'print "\033[0m"    ;' }
+		# Blinking color.
+		LESS_TERMCAP_mb = `{ perl -e 'print "\033[1;32m" ;' }
+		LESS_TERMCAP_me = `{ perl -e 'print "\033[0m"    ;' }
+	}
 	# Pager.
 	PAGER = $pager
 	MANPAGER = $manpager
