@@ -1,5 +1,6 @@
 # k1574's rc configuration file.
 
+oldifs = $ifs
 prompt = '% ' # The simplest possible prompt.
 fn % {
 	switch($#*){
@@ -119,11 +120,26 @@ fn ll {
 	goblin ls $* | finfo
 }
 
-cds = (`{pwd})
+
+cdfile = $tmp/cdfile
+if(! test -r $cdfile) touch $cdfile
+
+fn ucds {
+	# Update history.
+ifs = '
+'
+	cds = `{tac $cdfile | goblin uniq -U}
+ifs = $oldifs
+	echo > $cdfile
+	{for(i in $cds) echo $i} | tac >> $cdfile
+}
+ucds
+
 fn cd {
 	# History implementation.
  	if(builtin cd $1 && test -n $1){
 		pwd = `{pwd}
+		echo $pwd >> $cdfile
 		cds = ($pwd $cds)
 	}
 }
@@ -138,11 +154,6 @@ fn - {
 fn cds {
 	# Print history.
 	{for(i in $cds) echo $i } | nl
-}
-
-fn ucds {
-	# Let be in history just unique notes.
-	cds = `{ {for(i in $cds) echo $i} | goblin uniq -U}
 }
 
 fn p {
