@@ -50,11 +50,12 @@ goexe = $gopath/bin # Golang binaries.
 vpath = $app/v # VLang binaries and scripts.
 vexe = $vpath
 setenv = $lib/setenv/rc # Setting environment script.
+composerexe = $lib/composer/vendor/bin
 font = $plan9/font/fixed/unicode.9x15.font # The standard font for Plan9 program.
 editor = ed
 shell = rc
 
-path = ( $exe $path $goexe $plan9exe $infernoexe $vexe )
+path = ( $exe $path $goexe $plan9exe $infernoexe $vexe $composerexe )
 # Pretend path from growing because of running many "rc"s.
 if(which goblin >/dev/null >[2=1]){
 	path = `{
@@ -154,6 +155,10 @@ fn - {
 fn cds {
 	# Print history.
 	{for(i in $cds) echo $i } | nl
+}
+
+fn hcds {
+	cds | head
 }
 
 fn p {
