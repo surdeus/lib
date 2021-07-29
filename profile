@@ -70,7 +70,7 @@ xmodmap = $lib/xmodmap
 
 switch( `{uname} ){
 case ( Linux NetBSD DragonFly OpenBSD FreeBSD ) # On Unix-like systems.
-	if(which aes > /dev/null){
+	if(which aes >/dev/null >[2=1]){
 		LESS_TERMCAP_md = `{aes fg-red bold }
 		LESS_TERMCAP_me = `{aes end}
 		LESS_TERMCAP_us = `{aes fg-green bold}
@@ -123,6 +123,7 @@ fn ll {
 
 
 cdfile = $tmp/cdfile
+if(! test -d `{dirname $cdfile}) mkdir `{dirname $cdfile}
 if(! test -r $cdfile) touch $cdfile
 
 fn ucds {
