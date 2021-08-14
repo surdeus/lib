@@ -174,6 +174,12 @@ fn q {
 	exit
 }
 
+fn m {
+	for(i in $*){
+		man $man/$i | less 
+	}
+}
+
 # Setting enviroment.
 if(test -r $setenv){
 	. $setenv
