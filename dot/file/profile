@@ -35,6 +35,7 @@ export_loop  \
 	PS1 '"$SHPROMPT"' \
 	SUDO_PROMPT '"#"' \
 	EDITOR 'ed' \
+	INDENT '	' \
 	VISUAL 'vi' \
 	GIT_EDITOR '$VISUAL' \
 	PAGER 'less' \

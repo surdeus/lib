@@ -173,6 +173,10 @@ fn q {
 	exit
 }
 
+fn uprofile {
+	. $profile
+}
+
 # Setting enviroment.
 if(test -r $setenv){
 	. $setenv
