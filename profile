@@ -184,6 +184,10 @@ fn m {
 	}
 }
 
+fn noerr {
+	{$*} >[2]/dev/null
+}
+
 # Setting enviroment.
 if(test -r $setenv){
 	. $setenv
