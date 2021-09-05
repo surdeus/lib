@@ -178,14 +178,23 @@ fn uprofile {
 	. $profile
 }
 
-fn m {
-	for(i in $*){
-		man $man/$i | less 
-	}
-}
-
 fn noerr {
 	{$*} >[2]/dev/null
+}
+
+fn nostd {
+	{$*} >[1]/dev/null
+}
+
+fn m {
+	for(i in $*){
+		if(test -r $man/$i){
+			man $man/$i | less
+		}
+		if not {
+			man $i | less
+		}
+	}
 }
 
 # Setting enviroment.
