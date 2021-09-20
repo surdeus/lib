@@ -47,7 +47,7 @@ export_loop  \
 	ENVDIR '$HOME/env' \
 	SETENV '$LIB/setenv/sh' \
 	GOPATH '$APP/go' \
-	GOEXE '$GOPATH/bin'\
+	GOBIN '$EXE'\
 	COMPOSEREXE '$LIB/composer/vendor/bin' \
 	VPATH '$APP/v'\
 	VEXE '$VPATH'\
