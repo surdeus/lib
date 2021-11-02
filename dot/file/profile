@@ -58,6 +58,7 @@ export_loop  \
 	XDG_CONFIG_HOME '$LIB' \
 	XDG_RUNTIME_DIR '$TMP' \
 	XDG_DATA_HOME '$APP' \
+	XCOMPOSEFILE '$LIB/xcompose' \
 	ANDROID_NDK_HOME '$APP/android/ndk' \
 	LOGIN '$LIB/login/sh' \
 	GIT 'https://github.com/$USER' \
