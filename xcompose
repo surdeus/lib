@@ -5,4 +5,8 @@ include "%L"
 <Multi_key> <g> <g> : "γ"
 <Multi_key> <g> <p> : "π"
 <Multi_key> <g> <f> : "φ"
+<Multi_key> <g> <d> : "∆"
+
+<Multi_key> <m> <a> : "▲"
+<Multi_key> <m> <e> : "∎"
 

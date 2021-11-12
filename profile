@@ -155,11 +155,12 @@ fn - {
 
 fn cds {
 	# Print history.
-	{for(i in $cds) echo $i } | nl
+	goblin echo -d '
+' $cds | nl >[2]/dev/null
 }
 
 fn hcds {
-	cds | head
+	cds | head >[2]/dev/null
 }
 
 fn p {
