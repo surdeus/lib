@@ -15,6 +15,10 @@ export_loop(){
 	done
 }
 
+q(){
+	exit
+}
+
 # Standard variables.
 export_loop  \
 	ENV '$HOME/.shrc' \

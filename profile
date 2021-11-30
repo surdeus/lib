@@ -148,9 +148,10 @@ fn cd {
 
 fn - {
 	# Move back in history for $1 notes.
+	num = $1
 	if(~ $#* 0)
-		1 = 1
-	builtin cd $cds($1)
+		num = 1
+	builtin cd $cds($num)
 }
 
 fn cds {
