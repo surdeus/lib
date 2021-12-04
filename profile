@@ -1,5 +1,7 @@
 # k1574's rc configuration file.
 
+SHLVL = `{echo $SHLVL + 1 | bc}
+
 oldifs = $ifs
 prompt = '% ' # The simplest possible prompt.
 fn % {
@@ -32,6 +34,7 @@ git = https://github.com/$USER
 pager = less # Pager deleting all ESC-sequences. For 9term mostly.
 manpager = $pager # Pager for man pages.
 profile = $0 # Profile file.
+indent = '	' # Indent for programming.
 
 inferno = $app/inferno # Inferno.
 infernoexe = `{ # Inferno executables files.
@@ -44,19 +47,17 @@ infernoexe = `{ # Inferno executables files.
 }
 
 plan9 = $app/plan9 # Plan9.
-plan9exe= $plan9/bin # Plan9 bnaries.
+plan9exe= $plan9/bin # Plan9 exe files.
 gopath = $app/go # Golang path.
-goexe = $gopath/bin # Golang binaries.
 vpath = $app/v # VLang binaries and scripts.
-vexe = $vpath
+vexe = $vpath # VLang executives.
 setenv = $lib/setenv/rc # Setting environment script.
-composerexe = $lib/composer/vendor/bin
-font = $plan9/font/fixed/unicode.9x15.font # The standard font for Plan9 program.
-editor = ed
+composerexe = $lib/composer/vendor/bin # PHP executive shit.
+editor = vi
 shell = rc
 
-path = ( $exe $path $goexe $plan9exe $infernoexe $vexe $composerexe )
-# Pretend path from growing because of running many "rc"s.
+path = ( $home/exe $path $home $plan9exe $infernoexe $vexe $composerexe )
+# Prevent path from growing because of running many "rc"s.
 if(which goblin >/dev/null >[2=1]){
 	path = `{
 		{ for( i in $path) echo $i } | goblin uniq -U
@@ -93,12 +94,6 @@ case ( Linux NetBSD DragonFly OpenBSD FreeBSD ) # On Unix-like systems.
 		LESS_TERMCAP_mb = `{ perl -e 'print "\033[1;32m" ;' }
 		LESS_TERMCAP_me = `{ perl -e 'print "\033[0m"    ;' }
 	}
-	# Pager.
-	PAGER = $pager
-	MANPAGER = $manpager
-	# Editor.
-	EDITOR = $editor
-	user = $USER
 case *
 	# Nothing in non-Unix systems.
 }
@@ -173,6 +168,7 @@ fn e {
 }
 
 fn q {
+	echo $SHLVL - 1 | bc
 	exit
 }
 

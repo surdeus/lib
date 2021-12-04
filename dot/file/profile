@@ -22,51 +22,30 @@ q(){
 # Standard variables.
 export_loop  \
 	ENV '$HOME/.shrc' \
-	DEV '$HOME/dev' \
-	LIB '$HOME/lib' \
-	IMG '$HOME/img' \
-	SND '$HOME/snd' \
-	DOC '$HOME/doc' \
-	VID '$HOME/vid' \
-	LOAD '$HOME/load' \
-	TXT '$HOME/txt' \
-	SHR '$HOME/shr' \
-	MNT '$HOME/mnt' \
-	PUB '$HOME/pub' \
-	TMP '$HOME/tmp' \
-	EXE '$HOME/exe' \
-	SHPROMPT '"% "' \
-	PS1 '"$SHPROMPT"' \
+	PS1 '"% "' \
 	SUDO_PROMPT '"#"' \
-	EDITOR 'ed' \
-	INDENT '	' \
+	EDITOR 'vi' \
 	VISUAL 'vi' \
 	GIT_EDITOR '$VISUAL' \
 	PAGER 'less' \
 	MANPAGER '$PAGER' \
-	MAN '$SHR/man' \
+	\
 	PROFILE '$HOME/.profile' \
-	TMPL '$HOME/tmpl' \
-	APP '$HOME/app' \
 	ENVDIR '$HOME/env' \
-	SETENV '$LIB/setenv/sh' \
-	GOPATH '$APP/go' \
-	GOBIN '$EXE'\
-	COMPOSEREXE '$LIB/composer/vendor/bin' \
-	VPATH '$APP/v'\
-	VEXE '$VPATH'\
-	PLAN9BASE '/usr/local/plan9' \
-	PLAN9PORT '$APP/plan9' \
-	PLAN9 '$PLAN9PORT' \
-	INFERNO '$APP/inferno' \
-	XDG_CONFIG_HOME '$LIB' \
-	XDG_RUNTIME_DIR '$TMP' \
-	XDG_DATA_HOME '$APP' \
-	XCOMPOSEFILE '$LIB/xcompose' \
-	ANDROID_NDK_HOME '$APP/android/ndk' \
-	LOGIN '$LIB/login/sh' \
+	SETENV '$HOME/lib/setenv/sh' \
+	LOGIN '$HOME/lib/login/sh' \
+	INDENT '"	"'\
+	\
+	GOPATH '$HOME/app/go' \
+	GOBIN '$HOME/exe'\
+	COMPOSEREXE '$HOME/lib/composer/vendor/bin' \
+	XDG_CONFIG_HOME '$HOME/lib' \
+	XDG_RUNTIME_DIR '$HOME/tmp' \
+	XDG_DATA_HOME '$HOME/app' \
+	XCOMPOSEFILE '$HOME/lib/xcompose' \
+	ANDROID_NDK_HOME '$HOME/app/android/ndk' \
 	GIT 'https://github.com/$USER' \
-	PATH '$EXE:$PATH:$GOEXE:$PLAN9BASE/bin:$PLAN9PORT/bin:$VEXE:$COMPOSEREXE' \
+	PATH '$HOME/exe:$PATH' \
 
 test -r $SETENV && . "$SETENV" && setenv profile
 

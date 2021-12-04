@@ -1,7 +1,7 @@
 #!/bin/sh
-autoload -Uz compinit promptinit
-compinit
-promptinit
+#autoload -Uz compinit promptinit
+#compinit
+#promptinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.*' insert-sections true
@@ -29,6 +29,7 @@ setopt nobeep
 setopt noglobdots
 setopt noshwordsplit
 test -r "$LOGIN" && . "$LOGIN"
-PROMPT="$SHPROMPT"
+export PROMPT="%# "
+q(){echo $SHLVL - 1 | bc ; exit}
 test -r "$SETENV" && . "$SETENV" && setenv zsh
 

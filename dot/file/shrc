@@ -1,5 +1,10 @@
 #!/bin/sh
+
+q(){
+	echo $SHLVL - 1 | bc
+	exit
+}
+
 test -r "$LOGIN" && . "$LOGIN"
 PS1="$SHPROMPT"
 test -r "$SETENV" && . "$SETENV" && setenv sh
-
