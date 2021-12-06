@@ -6,5 +6,5 @@ q(){
 }
 
 test -r "$LOGIN" && . "$LOGIN"
-PS1="$SHPROMPT"
+PS1="% "
 test -r "$SETENV" && . "$SETENV" && setenv sh
