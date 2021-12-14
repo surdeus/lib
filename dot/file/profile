@@ -30,6 +30,8 @@ export_loop  \
 	PAGER 'less' \
 	MANPAGER '$PAGER' \
 	\
+	CMDHIST '$HOME/lib/cmds' \
+	CMDHISTMAX '100' \
 	PROFILE '$HOME/.profile' \
 	ENVDIR '$HOME/env' \
 	SETENV '$HOME/lib/setenv/sh' \
