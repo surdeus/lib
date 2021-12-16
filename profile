@@ -117,28 +117,25 @@ fn ll {
 }
 
 
+maxcds = 50
 cdfile = $tmp/cdfile
 if(! test -d `{dirname $cdfile}) mkdir `{dirname $cdfile}
 if(! test -r $cdfile) touch $cdfile
 
-fn ucds {
-	# Update history.
-ifs = '
-'
-	cds = `{tac $cdfile | goblin uniq -U}
-ifs = $oldifs
-	echo > $cdfile
-	{for(i in $cds) echo $i} | tac >> $cdfile
-}
-ucds
+tmpcdfile = `{mktemp}
 
-fn cd {
+fn c {
 	# History implementation.
  	if(builtin cd $1 && test -n $1){
 		pwd = `{pwd}
-		echo $pwd >> $cdfile
-		cds = ($pwd $cds)
+		cat $cdfile > $tmpcdfile
+		{echo $pwd ; cat $tmpcdfile } | \
+			sed $maxcds^q | goblin uniq -U > $cdfile
 	}
+}
+
+fn cd {
+	c $*
 }
 
 fn - {
@@ -146,13 +143,13 @@ fn - {
 	num = $1
 	if(~ $#* 0)
 		num = 1
-	builtin cd $cds($num)
+	backcd = `{sed -n $num^p $"cdfile}
+	builtin cd $backcd
 }
 
 fn cds {
 	# Print history.
-	goblin echo -d '
-' $cds | nl >[2]/dev/null
+	cat $cdfile | nl >[2]/dev/null
 }
 
 fn hcds {
