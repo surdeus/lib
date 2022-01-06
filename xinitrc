@@ -4,5 +4,9 @@ if test -d $xconf ; then
 		test -r $f && . "$f"
 	done
 fi
+
+test -r "$SETENV" && . "$SETENV"  \
+	&& setenv x
+
 exec $@
 
