@@ -126,10 +126,10 @@ tmpcdfile = `{mktemp}
 
 fn c {
 	# History implementation.
+	oldpwd = `{pwd}
  	if(builtin cd $1 && test -n $1){
-		pwd = `{pwd}
 		cat $cdfile > $tmpcdfile
-		{echo $pwd ; cat $tmpcdfile } | \
+		{echo $oldpwd ; cat $tmpcdfile } | \
 			sed $maxcds^q | goblin uniq -U > $cdfile
 	}
 }
