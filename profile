@@ -129,7 +129,7 @@ fn c {
 	oldpwd = `{pwd}
  	if(builtin cd $1 && test -n $1){
 		cat $cdfile > $tmpcdfile
-		{echo $oldpwd ; cat $tmpcdfile } | \
+		{pwd ; cat $tmpcdfile } | \
 			sed $maxcds^q | goblin uniq -U > $cdfile
 	}
 }
