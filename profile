@@ -192,6 +192,10 @@ fn m {
 	}
 }
 
+fn psagrep {
+	ps -A | grep $*
+}
+
 # Setting enviroment.
 if(test -r $setenv){
 	. $setenv
