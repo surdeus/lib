@@ -208,6 +208,10 @@ fn cpr {
 	cp -r $*
 }
 
+fn psagrep {
+	ps -A | grep $*
+}
+
 # Setting enviroment.
 if(test -r $setenv){
 	. $setenv
