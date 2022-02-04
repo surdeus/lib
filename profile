@@ -169,6 +169,10 @@ fn q {
 	exit
 }
 
+fn g {
+	9grep $*
+}
+
 fn uprofile {
 	. $profile
 }
@@ -190,6 +194,18 @@ fn m {
 			man $i | less
 		}
 	}
+}
+
+fn rmr {
+	rm -r $*
+}
+
+fn rmf {
+	rm -r -f $*
+}
+
+fn cpr {
+	cp -r $*
 }
 
 # Setting enviroment.
