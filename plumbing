@@ -1,7 +1,7 @@
 # these are generally in order from most specific to least,
 # since first rule that fires wins.
 
-include fileaddr
+#include fileaddr
 
 # declarations of ports without rules
 plumb to seemail
