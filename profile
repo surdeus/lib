@@ -124,7 +124,7 @@ if(! test -r $cdfile) touch $cdfile
 
 tmpcdfile = `{mktemp}
 
-fn c {
+fn cd {
 	# History implementation.
 	oldpwd = `{pwd}
  	if(builtin cd $1 && test -n $1){
@@ -134,22 +134,18 @@ fn c {
 	}
 }
 
-fn cd {
-	c $*
-}
-
 fn - {
 	# Move back in history for $1 notes.
 	num = $1
 	if(~ $#* 0)
 		num = 1
 	backcd = `{sed -n $num^p $"cdfile}
-	builtin cd $backcd
+	builtin cd $"backcd
 }
 
 fn cds {
 	# Print history.
-	cat $cdfile | nl >[2]/dev/null
+	cat $cdfile | goblin quote | nl >[2]/dev/null
 }
 
 fn hcds {
