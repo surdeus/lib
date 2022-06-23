@@ -134,6 +134,11 @@ fn cd {
 	}
 }
 
+fn cdl {
+	cd $*
+	ls
+}
+
 fn - {
 	# Move back in history for $1 notes.
 	num = $1
