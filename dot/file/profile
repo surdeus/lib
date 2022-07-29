@@ -41,9 +41,10 @@ export_loop  \
 	GOPATH '$HOME/app/go' \
 	GOBIN '$HOME/exe'\
 	COMPOSEREXE '$HOME/lib/composer/vendor/bin' \
+	XDG_UTILS_DEBUG_LEVEL '3'\
 	XDG_CONFIG_HOME '$HOME/lib' \
 	XDG_RUNTIME_DIR '$HOME/tmp' \
-	XDG_DATA_HOME '$HOME/app' \
+	XDG_DATA_HOME '$HOME/lib/xdg' \
 	XCOMPOSEFILE '$HOME/lib/xcompose' \
 	ANDROID_NDK_HOME '$HOME/app/android/ndk' \
 	GIT 'https://github.com/$USER' \

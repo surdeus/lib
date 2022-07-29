@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Version=1.0
+Name=xsam
+Comment=Sam text editor for X
+Exec=xsam
+Terminal=false
+Categories=Java;

@@ -1,0 +1,6 @@
+[Default Applications]
+text/plain=xsam.desktop
+text/x-go=xsam.desktop
+text/x-python=xsam.desktop
+text/x-csrc=xsam.desktop
+
