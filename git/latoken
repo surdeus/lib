@@ -1,0 +1,6 @@
+[user]
+	signingkey = 7E9C3DD82859D199
+	email = andrey.parkhomenko@latoken.com
+	name = andrey.parkhomenko
+[commit]
+	gpgsign = true

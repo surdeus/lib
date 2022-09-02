@@ -3,4 +3,5 @@ xsrf/cache
 xsrf/certificates
 xsrf/cookies.txt
 rcmain
+user-dirs.dirs
 

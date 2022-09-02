@@ -44,6 +44,8 @@
 " Syntax.
 	syntax on
 " Maps.
+	" Folds.
+	noremap <2-LeftMouse> za
 	" Nerd-Tree.
 	nmap \nt :NERDTree . <enter>
 	" Disable highlight.

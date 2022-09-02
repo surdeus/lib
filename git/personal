@@ -1,7 +1,6 @@
-[include]
-	path = ~/lib/git/personal
-[includeIf "gitdir:~/dev/latoken/"]
-	path = ~/lib/git/latoken
+[user]
+	name = surdeus
+	email = surdeus@gmail.com
 [alias]
 	co = checkout
 	ci = commit

@@ -48,7 +48,7 @@ export_loop  \
 	XCOMPOSEFILE '$HOME/lib/xcompose' \
 	ANDROID_NDK_HOME '$HOME/app/android/ndk' \
 	GIT 'https://github.com/$USER' \
-	PATH '$HOME/exe:$PATH' \
+	PATH '$HOME/exe:$HOME/.local/bin:$PATH' \
 
 test -r $SETENV && . "$SETENV" && setenv profile
 
