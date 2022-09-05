@@ -1,3 +1,5 @@
+. $HOME/.profile
+
 q(){
 	echo $SHLVL - 1 | bc
 	exit

@@ -4,4 +4,5 @@ xsrf/certificates
 xsrf/cookies.txt
 rcmain
 user-dirs.dirs
+dot/file/vim/pack
 

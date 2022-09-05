@@ -1,4 +1,5 @@
 #!/bin/sh
+. $HOME/.profile
 #autoload -Uz compinit promptinit
 #compinit
 #promptinit
