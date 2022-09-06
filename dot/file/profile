@@ -53,4 +53,5 @@ export_loop  \
 test -r $SETENV && . "$SETENV" && setenv profile
 
 export GPG_TTY=$(tty)
+export SSH_TTY=$(tty)
 
