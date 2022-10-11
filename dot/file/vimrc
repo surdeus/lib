@@ -1,4 +1,5 @@
 " k1574's shitty vimrc.
+
 " Mouse.
 	" In many terminal emulators the mouse works just fine.
 	" By enabling it you can position the cursor,
@@ -68,6 +69,9 @@
 	cnoremap <Esc>b <S-Left>
 	cnoremap <Esc>f <S-Right>
 	vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+" vimrc interaction.
+	nnoremap confe :e $MYVIMRC<CR>
+	nnoremap confr :source $MYVIMRC<CR>
 " File types.
 	autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=0
 	autocmd FileType javascriptreact setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=0
@@ -75,6 +79,7 @@
 	autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=0
 	autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=0
 	autocmd FileType htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=0
+	autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=0
 " Jump to the last pos.
 	" When editing a file, always jump to the last known cursor position.
 	" Don't do it when the position is invalid or when inside an event handler
