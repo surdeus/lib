@@ -13,7 +13,7 @@ hi Cursor       cterm=bold             ctermfg=black             ctermbg=red
 hi TermCursor   cterm=reverse          ctermfg=none              ctermbg=none
 hi CursorLine   cterm=bold             ctermfg=none              ctermbg=none
 hi VertSplit    cterm=none             ctermfg=grey              ctermbg=grey
-hi Folded       cterm=none             ctermfg=black             ctermbg=yellow
+hi Folded       cterm=none             ctermfg=black             ctermbg=green
 hi FoldColumn   cterm=none             ctermfg=yellow            ctermbg=white
 hi IncSearch    cterm=none             ctermfg=yellow            ctermbg=green
 hi ModeMsg      cterm=none             ctermfg=black             ctermbg=yellow
