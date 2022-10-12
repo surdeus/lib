@@ -1,14 +1,14 @@
-" Jien's VIM color file.
-" k1574: <k1574@yandex.ru>.
+" J's VIM color file.
+" surdeus: <surdeus@gmail.com>.
 " (originally looked at slate.)
 set background=dark
 if exists("syntax_on")
 	syntax reset
 endif
-"highlight clear
+" highlight clear
 
 let colors_name = "jien"
-hi Normal       cterm=none             ctermfg=white             ctermbg=none
+hi Normal       cterm=none ctermfg=gray             ctermbg=none
 hi Cursor       cterm=bold             ctermfg=black             ctermbg=red
 hi TermCursor   cterm=reverse          ctermfg=none              ctermbg=none
 hi CursorLine   cterm=bold             ctermfg=none              ctermbg=none
