@@ -3,7 +3,7 @@
 SHLVL = `{echo $SHLVL + 1 | bc}
 
 oldifs = $ifs
-prompt = '% ' # The simplest possible prompt.
+prompt = '; ' # The simplest possible prompt.
 fn % {
 	switch($#*){
 		case 0

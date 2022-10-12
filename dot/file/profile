@@ -22,7 +22,7 @@ q(){
 # Standard variables.
 export_loop  \
 	ENV '$HOME/.shrc' \
-	PS1 '"% "' \
+	PS1 '"; "' \
 	SUDO_PROMPT '"#"' \
 	EDITOR 'vi' \
 	VISUAL 'vi' \
