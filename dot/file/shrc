@@ -44,8 +44,7 @@ bcd() {
 
 	backcd=`sed -n $num'p' "$CDHIST"`
 
-	echo $backcd
-	command cd "$backcd"
+	c "$backcd"
 }
 
 PS1=$PROMPT
