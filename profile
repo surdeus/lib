@@ -130,7 +130,7 @@ fn cd {
  	if(builtin cd $1 && test -n $1){
 		cat $cdfile > $tmpcdfile
 		{pwd ; cat $tmpcdfile } | \
-			sed $maxcds^q | goblin uniq -U > $cdfile
+			sed $CDHISTMAX^q | goblin uniq -U > $cdfile
 	}
 }
 

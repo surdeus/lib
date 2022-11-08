@@ -6,7 +6,7 @@ export_loop(){
 	# Standard "export" command takes arguments
 	#	from variables from the start, but I want to
 	#	use other variables in definition for next of them.
-	while [  ! -z "$1" ]  ; do
+	while test  ! -z "$1"  ; do
 		# Doing until we have arguments.
 		value="$(eval echo $2)"
 		name="$1"
@@ -15,20 +15,19 @@ export_loop(){
 	done
 }
 
-q(){
-	exit
-}
-
 # Standard variables.
 export_loop  \
 	ENV '$HOME/.shrc' \
-	PS1 '"; "' \
+	PROMPT '"; "' \
 	SUDO_PROMPT '"#"' \
 	EDITOR 'vi' \
 	VISUAL 'vi' \
 	GIT_EDITOR '$VISUAL' \
 	PAGER 'less' \
 	MANPAGER '$PAGER' \
+	\
+	CDHIST '$HOME/lib/cds' \
+	CDHISTMAX '50' \
 	\
 	CMDHIST '$HOME/lib/cmds' \
 	CMDHISTMAX '100' \

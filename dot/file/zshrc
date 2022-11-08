@@ -1,5 +1,6 @@
 #!/bin/sh
-. $HOME/.profile
+. $HOME/.shrc
+
 #autoload -Uz compinit promptinit
 #compinit
 #promptinit
@@ -31,6 +32,5 @@ setopt noglobdots
 setopt noshwordsplit
 test -r "$LOGIN" && . "$LOGIN"
 export PROMPT="%# "
-q(){echo $SHLVL - 1 | bc ; exit}
 test -r "$SETENV" && . "$SETENV" && setenv zsh
 

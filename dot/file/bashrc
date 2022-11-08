@@ -1,10 +1,5 @@
-. $HOME/.profile
-
-q(){
-	echo $SHLVL - 1 | bc
-	exit
-}
-export PS1="% "
+. $HOME/.shrc
 
 test -r "$LOGIN" && . "$LOGIN"
 test -r "$SETENV" && . "$SETENV" && setenv bash
+

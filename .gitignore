@@ -6,4 +6,6 @@ rcmain
 user-dirs.dirs
 dot/file/vim/pack
 dot/file/vim/autoload
+cds
+cmds
 

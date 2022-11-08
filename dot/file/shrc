@@ -1,10 +1,56 @@
 #!/bin/sh
 
+. $HOME/.profile
+
 q(){
 	echo $SHLVL - 1 | bc
 	exit
 }
 
+tmpcdfile=`mktemp`
+
+c() {
+	oldpwd=`pwd`
+	if command cd $@ && test -n $1 ; then
+		cat $CDHIST > $tmpcdfile
+		{ pwd ; goblin cat $tmpcdfile ; } | \
+			sed $CDHISTMAX'q' | \
+			goblin uniq -U > $CDHIST
+	fi
+	pwd
+}
+
+l() {
+	ls $@
+}
+
+la() {
+	ls -al $@
+}
+
+cds() {
+	acds | sed 10q | goblin quote | nl
+}
+
+acds() {
+	cat $CDHIST 
+}
+
+bcd() {
+	num=$1
+	if test "$1" = "" ; then
+		num=1
+	fi
+
+	backcd=`sed -n $num'p' "$CDHIST"`
+
+	echo $backcd
+	command cd "$backcd"
+}
+
+PS1=$PROMPT
+
 test -r "$LOGIN" && . "$LOGIN"
-PS1="% "
 test -r "$SETENV" && . "$SETENV" && setenv sh
+
+
