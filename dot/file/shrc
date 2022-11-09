@@ -11,7 +11,13 @@ tmpcdfile=`mktemp`
 
 c() {
 	oldpwd=`pwd`
-	if command cd $@ && test -n $1 ; then
+	path=""
+
+	for v in $@ ; do
+		path="$path$v/"
+	done
+
+	if eval "command cd $path" && test -n $1 ; then
 		cat $CDHIST > $tmpcdfile
 		{ pwd ; goblin cat $tmpcdfile ; } | \
 			sed $CDHISTMAX'q' | \
@@ -36,7 +42,7 @@ acds() {
 	cat $CDHIST 
 }
 
-bcd() {
+b() {
 	num=$1
 	if test "$1" = "" ; then
 		num=1
@@ -45,6 +51,14 @@ bcd() {
 	backcd=`sed -n $num'p' "$CDHIST"`
 
 	c "$backcd"
+}
+
+e() {
+	$EDITOR $@
+}
+
+t() {
+	tree $@
 }
 
 PS1=$PROMPT
