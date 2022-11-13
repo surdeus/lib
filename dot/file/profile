@@ -19,6 +19,7 @@ export_loop(){
 export_loop  \
 	ENV '$HOME/.shrc' \
 	PROMPT '"; "' \
+	PS1 '"$PROMPT"' \
 	SUDO_PROMPT '"#"' \
 	EDITOR 'vi' \
 	VISUAL 'vi' \

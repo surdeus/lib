@@ -30,6 +30,11 @@ l() {
 	ls $@
 }
 
+cl() {
+	c $@
+	l
+}
+
 la() {
 	ls -al $@
 }
@@ -61,7 +66,7 @@ t() {
 	tree $@
 }
 
-PS1=$PROMPT
+export PS1=$PROMPT
 
 test -r "$LOGIN" && . "$LOGIN"
 test -r "$SETENV" && . "$SETENV" && setenv sh
