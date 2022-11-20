@@ -62,6 +62,10 @@ e() {
 	$EDITOR $@
 }
 
+ev() {
+	$VISUAL $@
+}
+
 t() {
 	tree $@
 }

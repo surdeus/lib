@@ -20,11 +20,11 @@ export_loop  \
 	ENV '$HOME/.shrc' \
 	PROMPT '"; "' \
 	PS1 '"$PROMPT"' \
-	SUDO_PROMPT '"#"' \
-	EDITOR 'vi' \
-	VISUAL 'vi' \
+	SUDO_PROMPT '"# "' \
+	EDITOR '`goblin useprog vim vi ed`' \
+	VISUAL '$EDITOR' \
 	GIT_EDITOR '$VISUAL' \
-	PAGER 'less' \
+	PAGER '`goblin useprog less more`' \
 	MANPAGER '$PAGER' \
 	\
 	CDHIST '$HOME/lib/cds' \
