@@ -58,14 +58,21 @@
 	nmap <S-Tab> <<
 	nmap <Space> i<Space><Esc>
 	nmap <Backspace> i<Backspace><Esc>l
+	imap <M-a> <Esc>
+	imap <C-Space> <Esc>
+
+" Windows.
 	nmap <C-l> <C-w>l
 	nmap <C-h> <C-w>h
 	nmap <C-j> <C-w>j
 	nmap <C-k> <C-w>k
-	imap <M-a> <Esc>
-	imap <C-Space> <Esc>
+	nmap <C-V> <C-W>v
+	nmap <C-S> <C-W>s
 	nmap + <C-W>+
 	nmap - <C-W>-
+	nnoremap <silent> <C-]> :vertical resize +4<CR>
+	nnoremap <silent> <C-[> :vertical resize -4<CR>
+
 	cnoremap <C-A> <Home>
 	cnoremap <C-F> <Right>
 	cnoremap <C-B> <Left>
