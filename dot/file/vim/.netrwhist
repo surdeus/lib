@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/surdeus/dev/my/goblin'
+let g:netrw_dirhist_9='/home/surdeus/dev/my/goblin/src'
+let g:netrw_dirhist_8='/home/surdeus/dev/my/goblin'
 let g:netrw_dirhist_7='/home/jien/env'
 let g:netrw_dirhist_6='/home/jien/.config'
 let g:netrw_dirhist_5='/home/jien/etc/configure.d'

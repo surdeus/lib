@@ -40,6 +40,9 @@
 	endif
 " Syntax.
 	syntax on
+" Backup.
+	set swapfile
+	set dir=~/tmp
 " Maps.
 	" Folds.
 	noremap <2-LeftMouse> za
