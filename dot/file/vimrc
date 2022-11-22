@@ -70,8 +70,9 @@
 	nmap <C-S> <C-W>s
 	nmap + <C-W>+
 	nmap - <C-W>-
-	nnoremap <silent> <C-]> :vertical resize +4<CR>
-	nnoremap <silent> <C-[> :vertical resize -4<CR>
+	nmap <C-]> 4<C-w>>
+	nmap <C-[> 4<C-w><
+
 
 	cnoremap <C-A> <Home>
 	cnoremap <C-F> <Right>
