@@ -70,9 +70,7 @@
 	nmap <C-S> <C-W>s
 	nmap + <C-W>+
 	nmap - <C-W>-
-	nmap <C-]> 4<C-w>>
-	nmap <C-[> 4<C-w><
-
+	nmap <C-@> 4<C-w>>
 
 	cnoremap <C-A> <Home>
 	cnoremap <C-F> <Right>
