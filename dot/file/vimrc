@@ -8,6 +8,7 @@
 		set mouse=a
 	endif
 " Set.
+	set noswapfile
 	set nowrap
 	set number
 	set autoindent
@@ -41,8 +42,8 @@
 " Syntax.
 	syntax on
 " Backup.
-	set swapfile
-	set dir=~/tmp
+	" set swapfile
+	" set dir=~/tmp
 " Maps.
 	" Folds.
 	noremap <2-LeftMouse> za
@@ -93,9 +94,9 @@
 	" When editing a file, always jump to the last known cursor position.
 	" Don't do it when the position is invalid or when inside an event handler
 	" (happens when dropping a file on "gvim").
-	autocmd BufReadPost *
-	\	if line("'\"") > 0 && line("'\"") <= line("$") |
-	\		exe "normal g`\"" |
-	\	endif
+	" autocmd BufReadPost *
+	" \	if line("'\"") > 0 && line("'\"") <= line("$") |
+	" \		exe "normal g`\"" |
+	" \	endif
 " Encoding.
 	set encoding=utf-8
