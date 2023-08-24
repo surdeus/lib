@@ -53,6 +53,7 @@ export_loop  \
 	MYVIMRC '$HOME/.vimrc'\
 
 test -r $SETENV && . "$SETENV" && setenv profile
+test -r $HOME/lib/script/lf.sh && . $HOME/lib/script/lf.sh
 
 export GPG_TTY=$(tty)
 export SSH_TTY=$(tty)
