@@ -4,22 +4,31 @@ local map = vim.api.nvim_set_keymap
 
 -- Configuration fast editing.
 local opts = {noremap = true, silent = true}
-map('n', 'confr', ':source $HOME/lib/nvim/init.lua\n', opts)
-map('n', 'confe', ':e      $HOME/lib/nvim/init.lua\n', opts)
--- File tree.
-map('n', '\\ft', ':NvimTreeFocus\n', opts)
-map('n', '\\fT', ':NvimTreeToggle .\n', opts)
--- Tabs.
-map('n', '\\tn', ':tabnew\n', opts)
+	map('n', '\\econf', ':source $HOME/lib/nvim/init.lua\n', opts)
+	map('n', '\\rconf', ':e      $HOME/lib/nvim/init.lua\n', opts)
+	map('n', '\\rmap', ':source $HOME/lib/nvim/lua/maps.lua\n', opts)
+	map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
 
+-- File tree.s
+	map('n', '\\home', ":cd $HOME | NvimTreeClose | NvimTreeOpen .;\n", opts)
+	map('n', '\\ft', ':NvimTreeFocus\n', opts)
+	map('n', '\\fT', ':NvimTreeToggle .\n', opts)
+
+-- Tabs.
+	map('n', '\\tn', ':tabnew\n', opts)
 
 -- Windows
 	-- Moving 
 	opts = {silent = true}
-	map('n', '<C-l>', '<C-w>l', opts)
-	map('n', '<C-h>', '<C-w>h', opts)
-	map('n', '<C-k>', '<C-w>k', opts)
-	map('n', '<C-j>', '<C-w>j', opts)
+	map('n', '<A-l>', '<C-w>l', opts)
+	map('n', '<A-h>', '<C-w>h', opts)
+	map('n', '<A-k>', '<C-w>k', opts)
+	map('n', '<A-j>', '<C-w>j', opts)
+	-- Resizing
+	map('n', '<C-k>', '<C-w>+', opts)
+	map('n', '<C-j>', '<C-w>-', opts)
+	map('n', '<C-a>', '3<C-w><', opts)
+	map('n', '<C-l>', '3<C-w>>', opts)
 	-- Splitting
 	map('n', '\\|', '<C-w>v', opts)
 	map('n', '\\-', '<C-w>s', opts)
