@@ -3,10 +3,16 @@ vim.o.smarttab = true
 vim.o.swapfile = false
 
 vim.o.number = true
+vim.o.cursorline = true
 vim.api.nvim_cmd({
 	cmd = 'colorscheme',
-	args = {'slate'},
+	args = {'jien'},
 }, {})
+
+require("maps")
+
+-- Do not put basic things after it,
+-- because the manager does not like it.
 
 -- Plugin manager "Lazy"
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -46,5 +52,4 @@ require("nvim-tree").setup({
 	},
 })
 
-require("maps")
 

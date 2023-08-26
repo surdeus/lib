@@ -4,8 +4,8 @@ local map = vim.api.nvim_set_keymap
 
 -- Configuration fast editing.
 local opts = {noremap = true, silent = true}
-	map('n', '\\econf', ':source $HOME/lib/nvim/init.lua\n', opts)
-	map('n', '\\rconf', ':e      $HOME/lib/nvim/init.lua\n', opts)
+	map('n', '\\rconf', ':source $HOME/lib/nvim/init.lua\n', opts)
+	map('n', '\\econf', ':e      $HOME/lib/nvim/init.lua\n', opts)
 	map('n', '\\rmap', ':source $HOME/lib/nvim/lua/maps.lua\n', opts)
 	map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
 
@@ -16,6 +16,9 @@ local opts = {noremap = true, silent = true}
 
 -- Tabs.
 	map('n', '\\tn', ':tabnew\n', opts)
+
+-- Line
+	map('n', '\\nl', ':if &cursorline==1<enter>set nocursorline<enter>else set cursoreline<enter>endif<enter><enter>', opts)
 
 -- Windows
 	-- Moving 
