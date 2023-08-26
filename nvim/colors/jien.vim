@@ -11,7 +11,7 @@ let colors_name = "jien"
 hi Normal       guibg=black guifg=lightgray
 hi Cursor       gui=reverse
 hi TermCursor   guibg=red
-hi CursorLine   gui=bold
+hi CursorLine   gui=bold guifg=none guibg=none
 hi VertSplit    gui=bold guifg=yellow
 
 hi Folded       gui=none guifg=black guibg=green
@@ -49,8 +49,8 @@ hi Structure    gui=none             guifg=green             guibg=none
 hi Ignore       cterm=none             ctermfg=7                 ctermbg=none
 hi Directory    cterm=none             ctermfg=darkcyan          ctermbg=none
 hi ErrorMsg     cterm=none             ctermfg=7                 ctermbg=1
-hi VisualNOS    cterm=bold,underline   ctermfg=none              ctermbg=none
-hi WildMenu     cterm=none             ctermfg=black             ctermbg=yellow
+hi VisualNOS    guifg=black
+hi WildMenu     guifg=white guibg=darkmagenta
 hi DiffAdd      ctermbg=4              ctermfg=none              ctermbg=none
 hi DiffChange   ctermbg=5              ctermfg=none              ctermbg=none
 hi DiffDelete   cterm=bold             ctermfg=4                 ctermbg=6

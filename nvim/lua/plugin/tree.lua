@@ -1,5 +1,8 @@
 return {
 	"nvim-tree/nvim-tree.lua",
+	git = {
+		disable = true,
+	},
 	version = "*",
 	lazy = false,
 	dependencies = {
@@ -8,7 +11,4 @@ return {
 	config = function()
 		require("nvim-tree").setup {}
 	end,
-	git = {
-		enable = false,
-	},
 }

@@ -1,6 +1,7 @@
 vim.o.smarttab = true
 
 vim.o.swapfile = false
+vim.o.tabstop = 4
 
 vim.o.number = true
 vim.o.cursorline = true
