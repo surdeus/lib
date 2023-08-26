@@ -46,11 +46,5 @@ require("nvim-tree").setup({
 	},
 })
 
--- Key mapping
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+require("maps")
 
-map('n', 'confr', ':source $HOME/lib/nvim/init.lua\n', opts)
-map('n', 'confe', ':e      $HOME/lib/nvim/init.lua\n', opts)
-map('n', '\\ft', ':NvimTreeToggle\n', opts)
-map('n', '\\fT', ':NvimTreeOpen .\n', opts)
