@@ -1,7 +1,7 @@
-vim.o.smarttab = true
+-- Surdeus init file.
+-- surdeus@gmail.com
 
-vim.o.swapfile = false
-vim.o.tabstop = 4
+vim.opt.swapfile = false
 
 vim.o.number = true
 vim.o.cursorline = true
@@ -10,6 +10,7 @@ vim.api.nvim_cmd({
 	args = {'jien'},
 }, {})
 
+require("indent")
 require("maps")
 
 -- Do not put basic things after it,
@@ -39,7 +40,6 @@ require("lazy").setup(plugins, opts)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
-require("nvim-tree").setup()
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	view = {
@@ -50,6 +50,9 @@ require("nvim-tree").setup({
 	},
 	filters = {
 		dotfiles = false,
+	},
+	git = {
+		enable=false,
 	},
 })
 

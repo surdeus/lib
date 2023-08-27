@@ -1,4 +1,5 @@
 
+vim.o.timeout = false
 -- Key mapping
 local map = vim.api.nvim_set_keymap
 
@@ -8,6 +9,8 @@ local opts = {noremap = true, silent = true}
 	map('n', '\\econf', ':e      $HOME/lib/nvim/init.lua\n', opts)
 	map('n', '\\rmap', ':source $HOME/lib/nvim/lua/maps.lua\n', opts)
 	map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
+	map('n', '\\rcolor', ':colorscheme jien\n', opts)
+	map('n', '\\ecolor', ':e $HOME/lib/nvim/colors/jien.vim\n', opts)
 
 -- File tree.s
 	map('n', '\\home', ":cd $HOME | NvimTreeClose | NvimTreeOpen .;\n", opts)
@@ -18,7 +21,7 @@ local opts = {noremap = true, silent = true}
 	map('n', '\\tn', ':tabnew\n', opts)
 
 -- Line
-	map('n', '\\nl', ':if &cursorline==1<enter>set nocursorline<enter>else set cursoreline<enter>endif<enter><enter>', opts)
+	-- map('n', '\\nl', ':if &cursorline==1<enter>set nocursorline<enter>else set cursoreline<enter>endif<enter><enter>', opts)
 
 -- Windows
 	-- Moving 
@@ -30,7 +33,7 @@ local opts = {noremap = true, silent = true}
 	-- Resizing
 	map('n', '<C-k>', '<C-w>+', opts)
 	map('n', '<C-j>', '<C-w>-', opts)
-	map('n', '<C-a>', '3<C-w><', opts)
+	map('n', '<C-h>', '3<C-w><', opts)
 	map('n', '<C-l>', '3<C-w>>', opts)
 	-- Splitting
 	map('n', '\\|', '<C-w>v', opts)
