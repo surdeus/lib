@@ -15,8 +15,7 @@ require("maps")
 
 require("bootstrap")
 require("dep") {
-	require("plugin.carbon")
 }
 
-require("carbon").setup()
+require("carbon").setup({})
 
