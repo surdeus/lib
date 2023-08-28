@@ -1,0 +1,3 @@
+return {
+	'surdeus/carbon.nvim'
+}

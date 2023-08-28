@@ -13,9 +13,8 @@ local opts = {noremap = true, silent = true}
 	map('n', '\\ecolor', ':e $HOME/lib/nvim/colors/jien.vim\n', opts)
 
 -- File tree.s
-	map('n', '\\home', ":cd $HOME | NvimTreeClose | NvimTreeOpen .;\n", opts)
-	map('n', '\\ft', ':NvimTreeFocus\n', opts)
-	map('n', '\\fT', ':NvimTreeToggle .\n', opts)
+	map('n', '\\home', ":cd $HOME\n", opts)
+	map('n', '\\ft', ':ToggleSidebarCarbon\n', opts)
 
 -- Tabs.
 	map('n', '\\tn', ':tabnew\n', opts)
