@@ -5,13 +5,12 @@ vim.opt.swapfile = false
 
 vim.o.number = true
 vim.o.cursorline = true
-vim.api.nvim_cmd({
-	cmd = 'colorscheme',
-	args = {'jien'},
-}, {})
 
 require("indent")
 require("maps")
+
+local hls = require("color.night").hls
+require("color").apply_hls((hls))
 
 require("bootstrap")
 require("dep") {

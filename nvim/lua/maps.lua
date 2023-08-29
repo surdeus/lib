@@ -4,16 +4,17 @@ vim.o.timeout = false
 local map = vim.api.nvim_set_keymap
 
 -- Configuration fast editing.
-local opts = {noremap = true, silent = true}
+local opts = {silent = true}
 	map('n', '\\rconf', ':source $HOME/lib/nvim/init.lua\n', opts)
 	map('n', '\\econf', ':e      $HOME/lib/nvim/init.lua\n', opts)
 	map('n', '\\rmap', ':source $HOME/lib/nvim/lua/maps.lua\n', opts)
 	map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
-	map('n', '\\rcolor', ':colorscheme jien\n', opts)
-	map('n', '\\ecolor', ':e $HOME/lib/nvim/colors/jien.vim\n', opts)
 
 -- Moving around.
 	map('n', '\\home', ":cd $HOME\n", opts)
+
+  map('n', '\\lex', ":Lexplore\n", opts)
+  map('n', '\\ex', ":Explore\n", opts)
 
 -- Search
   map('n', '\\noh', ':noh\n', opts)
