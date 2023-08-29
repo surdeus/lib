@@ -12,9 +12,11 @@ local opts = {noremap = true, silent = true}
 	map('n', '\\rcolor', ':colorscheme jien\n', opts)
 	map('n', '\\ecolor', ':e $HOME/lib/nvim/colors/jien.vim\n', opts)
 
--- File tree.s
+-- Moving around.
 	map('n', '\\home', ":cd $HOME\n", opts)
-	map('n', '\\ft', ':ToggleSidebarCarbon\n', opts)
+
+-- Search
+  map('n', '\\noh', ':noh\n', opts)
 
 -- Tabs.
 	map('n', '\\tn', ':tabnew\n', opts)
