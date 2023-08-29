@@ -10,7 +10,7 @@ createAutoCmd({
 	"BufNewFile",
 	"BufRead",
 },{
-	pattern = "*.js,*.jsx,*.scss,*.css,*.html,*.tmpl,*.tpl",
+	pattern = "*.lua,*.js,*.jsx,*.scss,*.css,*.html,*.tmpl,*.tpl",
 	callback = function()
 		local buf = vim.bo[vim.api.nvim_get_current_buf()]
 		buf.expandtab = true

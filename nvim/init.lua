@@ -17,5 +17,3 @@ require("bootstrap")
 require("dep") {
 }
 
-require("carbon").setup({})
-
