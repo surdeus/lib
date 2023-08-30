@@ -9,7 +9,10 @@ package.colors = {
   lgray = "#BBBBBB",
 
   red = "#FF0000",
+
   green = "#00FF00",
+  dgreen = "#00bb00",
+
   blue = "#0000FF",
   lblue = "#0089ff",
 

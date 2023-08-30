@@ -22,10 +22,10 @@ export_loop  \
 	PS1 '"$PROMPT"' \
 	SUDO_PROMPT '"# "' \
 	PATH '$HOME/exe:$HOME/.local/bin:$PATH' \
-	EDITOR '`goblin useprog vim vi ed`' \
+	EDITOR '`goblin which vim vi ed`' \
 	VISUAL '$EDITOR' \
 	GIT_EDITOR '$VISUAL' \
-	PAGER '`goblin useprog less more`' \
+	PAGER '`goblin which less more`' \
 	MANPAGER '$PAGER' \
 	\
 	CDHIST '$HOME/lib/cds' \
