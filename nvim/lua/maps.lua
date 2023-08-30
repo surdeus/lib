@@ -37,7 +37,8 @@ local opts = {silent = true}
 	map('n', '<C-j>', '<C-w>-', opts)
 	map('n', '<C-h>', '3<C-w><', opts)
 	map('n', '<C-l>', '3<C-w>>', opts)
-	map('n', '<space>', '3<C-w>>', opts)
+	map('n', '<Space>', '3<C-w>>', opts)
+	map('n', '<C-Space>', '3<C-w><', opts)
 	-- Splitting
 	map('n', '\\|', '<C-w>v', opts)
 	map('n', '\\-', '<C-w>s', opts)
