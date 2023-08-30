@@ -15,15 +15,17 @@ export_loop(){
 	done
 }
 
+if test "$OS" != "Windows_NT" ; then \
+	PATH="$HOME/exe:$HOME/.local/bin:$PATH"
+fi
 # Standard variables.
 export_loop  \
 	ENV '$HOME/.shrc' \
 	PROMPT '"; "' \
 	PS1 '"$PROMPT"' \
 	SUDO_PROMPT '"# "' \
-	PATH '$HOME/exe:$HOME/.local/bin:$PATH' \
 	EDITOR '`goblin which vim vi ed`' \
-	VISUAL '$EDITOR' \
+	VISUAL 'goblin which nvim-qt $EDITOR' \
 	GIT_EDITOR '$VISUAL' \
 	PAGER '`goblin which less more`' \
 	MANPAGER '$PAGER' \
