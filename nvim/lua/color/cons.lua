@@ -4,16 +4,17 @@ local package = {}
 package.colors = {
   none = "none",
   black = "#000000",
-  white = "#FFFFFF",
+  white = "#ffffff",
   gray = "#777777",
   lgray = "#BBBBBB",
 
-  red = "#FF0000",
+  red = "#ff0000",
 
-  green = "#00FF00",
+  lgreen = "#44ff44",
+  green = "#00ff00",
   dgreen = "#00bb00",
 
-  blue = "#0000FF",
+  blue = "#0000ff",
   lblue = "#0089ff",
 
   purple = "#cc33ff",

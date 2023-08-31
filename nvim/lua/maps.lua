@@ -7,7 +7,6 @@ local map = vim.api.nvim_set_keymap
 local opts = {silent = true}
 	map('n', '\\rconf', ':source $HOME/lib/nvim/init.lua\n', opts)
 	map('n', '\\econf', ':e      $HOME/lib/nvim/init.lua\n', opts)
-	map('n', '\\rmap', ':source $HOME/lib/nvim/lua/maps.lua\n', opts)
 	map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
 
 -- Moving around.
