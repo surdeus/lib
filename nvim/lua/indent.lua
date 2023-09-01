@@ -1,4 +1,5 @@
 
+-- Golang, C based configuration
 vim.o.autoindent = true
 vim.o.expandtab = false
 vim.o.tabstop = 4

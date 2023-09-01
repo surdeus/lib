@@ -4,45 +4,44 @@ local package = {}
 local c = require("color.cons").colors
 
 package.hls = {
-  Normal = {fg = c.white, bg = c.black},
+  Normal = {fg = "white", bg = "black"},
 
-  TabLine = {fg = c.black, bg = c.lgray},
-  TabLineSel = {fg = c.black, bg = c.green},
-  TabLineFill = {bg = c.gray},
+  TabLine = {fg = "black", bg = "lightgray"},
+  TabLineSel = {fg = "white", bg="green", ctermbg = "darkgreen"},
+  TabLineFill = {bg = "darkgray"},
 
-  LineNr = {fg = c.black, bg=c.white},
-  CursorLineNr = {fg = c.white, bg=c.black},
+  LineNr = {fg = "black", bg="lightgray"},
+  CursorLineNr = {fg = "white", bg="green", ctermbg="darkgreen"},
 
   Cursor = {reverse=true},
   lCursor = {reverse=true},
   CursorLine = {bold = true},
 
-  StatusLine = {fg = c.black, bg = c.green},
-  StatusLineNC = {fg = c.black, bg = c.lgray},
+  StatusLine = {fg = "white", bg="green", ctermbg = "darkgreen"},
+  StatusLineNC = {fg = "black", bg = "lightgray"},
 
-  IncSearch = {fg=c.black, bg=c.purple},
-  Search = {fg=c.black, bg=c.purple},
-  Pmenu = {fg=c.black, bg=c.lpurple},
+  IncSearch = {fg="black", bg="magenta"},
+  Search = {fg="black", bg="magenta"},
+  Pmenu = {fg="black", bg="magenta"},
+  Comment = {fg="magenta"},
+  PreProc = {fg="magenta"},
+  Define = {fg="magenta"},
 
-  String = {fg=c.red},
-  Constant = {fg=c.red},
-  Special = {fg=c.green},
+  String = {fg="red"},
+  Constant = {fg="red"},
+  Special = {fg="lightgreen"},
 
-  Function = {bold = true, fg = c.lyellow},
-  Statement = {bold = true, fg = c.lyellow},
-  Type = {bold = true, fg = c.lgreen},
-  Structure = {bold = true, fg = c.green},
-  Operator = {bold = true, fg = c.green},
+  Function = {bold = true, fg = "yellow"},
+  Statement = {bold = true, fg = "yellow"},
+  Type = {bold = true, fg = "lightgreen"},
+  Structure = {bold = true, fg = "lightgreen"},
+  Operator = {bold = true, fg = "lightgreen"},
 
-  Comment = {fg=c.purple},
-  PreProc = {fg=c.lpurple},
-  Define = {fg=c.lpurple},
+  Folded = {fg="black", bg="lightgray"},
+  FoldColumn = {fg="black", bg="lightgray"},
 
-  Folded = {fg=c.black, bg=lgray},
-  FoldColumn = {fg=c.black, bg=lgray},
-
-  Ignore = {fg=c.lgreen},
-  Error = {fg=c.white, bg=c.red},
+  Ignore = {fg="lightgreen"},
+  Error = {fg="white", bg="red"},
   Underlined = {underline = true},
 }
 
