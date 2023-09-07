@@ -11,7 +11,7 @@ vim.opt.swapfile = false
 
 vim.o.number = true
 vim.o.cursorline = true
-vim.o.guicursor = 'n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor'
+vim.o.guicursor = 'n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkoff700-blinkoff400-blinkoff250-Cursor/lCursor'
 
 
 require("indent")
