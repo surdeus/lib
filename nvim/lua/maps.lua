@@ -44,14 +44,16 @@ local opts = {silent = true}
 -- vim.api.nvim_del_keymap('n', '<C-r>')
 -- Windows
 	-- Moving 
+	map('n', '<S-b>', '<C-b>', opts)
+	map('n', '<S-f>', '<C-f>', opts)
 	opts = {silent = true}
 	map('n', '<A-l>', '<C-w>l', opts)
 	map('n', '<A-h>', '<C-w>h', opts)
 	map('n', '<A-k>', '<C-w>k', opts)
 	map('n', '<A-j>', '<C-w>j', opts)
 	-- Resizing
-	map('n', '<C-k>', '<C-w>+', opts)
-	map('n', '<C-j>', '<C-w>-', opts)
+	map('n', '+', '<C-w>+', opts)
+	map('n', '-', '<C-w>-', opts)
 	-- map('n', '<C-h>', '3<C-w><', opts)
 	-- map('n', '<C-l>', '3<C-w>>', opts)
 	map('n', '<Space>', '3<C-w>>', opts)
