@@ -6,19 +6,20 @@ local c = require("color.cons").colors
 package.hls = {
   Normal = {fg = "white", bg = "black"},
 
-  TabLine = {fg = "black", bg = "lightgray"},
-  TabLineSel = {fg = "white", bg="green", ctermbg = "darkgreen"},
-  TabLineFill = {bg = "darkgray"},
+  TabLine = {bold = false, fg = "black", bg = "darkgray" },
+  TabLineSel = {bold = true, fg = "black", bg="white"},
 
-  LineNr = {fg = "black", bg="lightgray"},
-  CursorLineNr = {fg = "white", bg="green", ctermbg="darkgreen"},
+  TabLineFill = {bold = false, bg = "gray"},
+
+  LineNr = {bold = false, fg = "gray"},
+  CursorLineNr = {bold = true, fg="white"},
 
   Cursor = {reverse=true},
   lCursor = {reverse=true},
   CursorLine = {bold = true},
 
-  StatusLine = {fg = "white", bg="green", ctermbg = "darkgreen"},
-  StatusLineNC = {fg = "black", bg = "lightgray"},
+  StatusLine = {bold = true, fg="black", bg="white"},
+  StatusLineNC = {bold= false, fg = "black", bg = "darkgray"},
 
   IncSearch = {fg="black", bg="magenta"},
   Search = {fg="black", bg="magenta"},
@@ -36,13 +37,18 @@ package.hls = {
   Type = {bold = true, fg = "lightgreen"},
   Structure = {bold = true, fg = "lightgreen"},
   Operator = {bold = true, fg = "lightgreen"},
+  Identifier = {bold = true, fg = "yellow"},
 
-  Folded = {fg="black", bg="lightgray"},
-  FoldColumn = {fg="black", bg="lightgray"},
+  Folded = {fg="gray", bg="none"},
+  FoldColumn = {fg="black", bg="gray"},
 
   Ignore = {fg="lightgreen"},
   Error = {fg="white", bg="red"},
   Underlined = {underline = true},
+
+  VertSplit = {bold=true, fg="gray"},
+
+  Visual = {reverse=true},
 }
 
 return package

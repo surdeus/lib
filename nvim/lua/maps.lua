@@ -32,6 +32,10 @@ local opts = {silent = true}
 -- Tabs.
 	map('n', '\\tn', ':tabnew\n', opts)
 
+-- Fold
+
+  map('n', 'zO', "zR", opts)
+
 -- Insert
 	-- Literal tabs with Shift-Tab
 	map('i', '<S-Tab>', '\t', opts)

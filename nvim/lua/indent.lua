@@ -1,17 +1,29 @@
 
 -- Golang, C based configuration
 vim.o.autoindent = true
-vim.o.expandtab = false
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.o.foldmethod = 'indent'
 
 createAutoCmd = vim.api.nvim_create_autocmd
+
+-- Basic thing for compiling languages.
+createAutoCmd({
+	"BufNewFile",
+	"BufRead",
+},{
+	pattern = "*.go,*.c,*.cc,*.C,*.cpp,*.rs",
+	callback = function()
+		local buf = vim.bo[vim.api.nvim_get_current_buf()]
+    vim.o.expandtab = false
+    vim.o.tabstop = 4
+    vim.o.shiftwidth = 4
+	end,
+})
 
 createAutoCmd({
 	"BufNewFile",
 	"BufRead",
 },{
-	pattern = "*.lua,*.js,*.jsx,*.scss,*.css,*.html,*.tmpl,*.tpl,*.yml,*.yaml,*.toml,*.tml",
+	pattern = "*.lua,*.js,*.jsx,*.scss,*.css,*.sass,*.html,*.htmlx,*.tmpl,*.tpl,*.yml,*.yaml,*.toml,*.tml",
 	callback = function()
 		local buf = vim.bo[vim.api.nvim_get_current_buf()]
 		buf.expandtab = true
@@ -34,5 +46,6 @@ createAutoCmd({
 		buf.softtabstop = 0
 	end,
 })
+
 
 
