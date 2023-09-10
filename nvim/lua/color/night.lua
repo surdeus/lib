@@ -4,6 +4,7 @@ local package = {}
 local c = require("color.cons").colors
 
 package.hls = {
+  -- The highlights to be applied via color.apply method.
   Normal = {fg = "white", bg = "black"},
 
   TabLine = {bold = false, fg = "black", bg = "darkgray" },
@@ -49,6 +50,8 @@ package.hls = {
   VertSplit = {bold=true, fg="gray"},
 
   Visual = {reverse=true},
+
+  Whitespace = {bold = false, fg="gray"},
 }
 
 return package
