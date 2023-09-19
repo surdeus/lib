@@ -4,7 +4,7 @@ vim.o.timeout = false
 local map = vim.api.nvim_set_keymap
 
 -- Configuration fast editing.
-local opts = {silent = true}
+local opts = {nowait=true, silent = true}
   map('n', '\\rconf', ':source $HOME/lib/nvim/init.lua\n', opts)
   map('n', '\\econf', ':e      $HOME/lib/nvim/init.lua\n', opts)
   map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
@@ -54,6 +54,11 @@ local opts = {silent = true}
   map('n', '<A-h>', '<C-w>h', opts)
   map('n', '<A-k>', '<C-w>k', opts)
   map('n', '<A-j>', '<C-w>j', opts)
+
+  map('n', 'gl', '<C-w>l', opts)
+  map('n', 'gh', '<C-w>h', opts)
+  map('n', 'gk', '<C-w>k', opts)
+  map('n', 'gj', '<C-w>j', opts)
   -- Resizing
   map('n', '+', '<C-w>+', opts)
   map('n', '-', '<C-w>-', opts)

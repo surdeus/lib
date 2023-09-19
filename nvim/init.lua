@@ -8,6 +8,8 @@ end
 
 vim.cmd.language("en_US")
 vim.opt.swapfile = false
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 vim.o.number = true
 vim.o.cursorline = true
