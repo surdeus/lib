@@ -8,6 +8,7 @@ local opts = {nowait=true, silent = true}
   map('n', '\\rconf', ':source $HOME/lib/nvim/init.lua\n', opts)
   map('n', '\\econf', ':e      $HOME/lib/nvim/init.lua\n', opts)
   map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
+  map('n', '\\ic', ':set ic!\n', opts)
 
 -- Quit
   map('n', '\\q', ":quit\n", opts)
