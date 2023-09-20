@@ -25,6 +25,8 @@ require("maps")
 local hls = require("color.night").hls
 require("color").apply_hls((hls))
 
+--require'lspconfig'.gopls.setup{}
+
 require("bootstrap")
 require("dep") {
 }
