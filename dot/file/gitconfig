@@ -19,6 +19,7 @@
 	pl = pull
 	fc = fetch
 	lg = log
+	tg = tag
 	stsh = stash
 	type = cat-file -t
 	dump = cat-file -p
