@@ -72,6 +72,10 @@ local opts = {nowait=true, silent = true}
   map('n', '\\|', '<C-w>v', opts)
   map('n', '\\-', '<C-w>s', opts)
 
+  -- Move
+  map('n', 'L', '$', opts)
+  map('n', 'H', '^', opts)
+
 -- Netrw
 vim.api.nvim_create_autocmd('filetype', {
   pattern = 'netrw',
