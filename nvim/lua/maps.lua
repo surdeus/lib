@@ -10,6 +10,8 @@ local opts = {nowait=true, silent = true}
   map('n', '\\emap', ':e $HOME/lib/nvim/lua/maps.lua\n', opts)
   map('n', '\\ic', ':set ic!\n', opts)
 
+  map('n', '<Return>', 'o<Esc>', opts)
+
 -- Quit
   map('n', '\\q', ":quit\n", opts)
   map('n', '\\qa', ":qa\n", opts)
